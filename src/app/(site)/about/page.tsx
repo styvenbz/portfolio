@@ -35,7 +35,7 @@ export default async function AboutPage() {
 
             {about?.experience.length ? (
               <section className="mt-20">
-                <h2 className="text-(--color-ink-faint) border-(--color-line) border-t pt-6 font-mono text-xs tracking-[0.2em] uppercase">
+                <h2 className="text-(--color-ink-faint) border-(--color-line) border-t pt-6 label">
                   Experience
                 </h2>
                 <ul className="mt-8 flex flex-col gap-10">
@@ -43,7 +43,7 @@ export default async function AboutPage() {
                     <li key={index}>
                       <div className="flex items-baseline justify-between gap-4">
                         <h3 className="text-lg tracking-tight">{item.company}</h3>
-                        <span className="text-(--color-ink-faint) font-mono text-xs">
+                        <span className="text-(--color-ink-faint) text-xs">
                           {item.period}
                         </span>
                       </div>
@@ -61,7 +61,7 @@ export default async function AboutPage() {
 
             {about?.skills.length ? (
               <section className="mt-20">
-                <h2 className="text-(--color-ink-faint) border-(--color-line) border-t pt-6 font-mono text-xs tracking-[0.2em] uppercase">
+                <h2 className="text-(--color-ink-faint) border-(--color-line) border-t pt-6 label">
                   Skills
                 </h2>
                 <ul className="mt-8 flex flex-wrap gap-x-3 gap-y-2 text-sm">

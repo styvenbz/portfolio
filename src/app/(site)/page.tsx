@@ -64,7 +64,7 @@ export default async function HomePage() {
       <section id="work" className="px-(--spacing-gutter) pb-(--spacing-section)">
         <div className="mx-auto w-full max-w-[92rem]">
           {home?.workHeading ? (
-            <h2 className="text-(--color-ink-faint) border-(--color-line) mb-12 border-t pt-6 font-mono text-xs tracking-[0.2em] uppercase">
+            <h2 className="text-(--color-ink-faint) border-(--color-line) mb-12 border-t pt-6 label">
               {home.workHeading}
             </h2>
           ) : null}

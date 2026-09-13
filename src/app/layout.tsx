@@ -1,14 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { getSeoDefaults } from '@/lib/content'
 import { ogImageUrl, hasImage } from '@/lib/cloudinary'
+import { neueMontreal } from './fonts'
 import './globals.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoDefaults()
@@ -37,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={neueMontreal.variable}>
       <body>{children}</body>
     </html>
   )

@@ -128,7 +128,7 @@ export default async function CaseStudyPage({
               .filter((item) => item.value)
               .map((item) => (
                 <div key={item.label}>
-                  <dt className="text-(--color-ink-faint) font-mono text-xs tracking-[0.2em] uppercase">
+                  <dt className="text-(--color-ink-faint) label">
                     {item.label}
                   </dt>
                   <dd className="mt-2 text-sm">{item.value}</dd>

@@ -46,7 +46,7 @@ export function CaseStudyNav({
       aria-label="Sections"
       className="bg-(--color-bg)/95 border-(--color-line) sticky top-(--header-height) z-40 border-b backdrop-blur-sm"
     >
-      <ol className="px-(--spacing-gutter) mx-auto flex w-full max-w-[92rem] gap-x-6 gap-y-1 overflow-x-auto py-4 font-mono text-xs whitespace-nowrap">
+      <ol className="px-(--spacing-gutter) mx-auto flex w-full max-w-[92rem] gap-x-6 gap-y-1 overflow-x-auto py-4 text-xs whitespace-nowrap">
         {sections.map((section) => {
           const isActive = section.id === activeId
           return (

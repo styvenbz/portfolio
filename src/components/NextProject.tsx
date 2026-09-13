@@ -18,7 +18,7 @@ export function NextProject({
   return (
     <section className="px-(--spacing-gutter) mt-(--spacing-section)">
       <div className="border-(--color-line) mx-auto w-full max-w-[92rem] border-t pt-10">
-        <p className="text-(--color-ink-faint) font-mono text-xs tracking-[0.2em] uppercase">
+        <p className="text-(--color-ink-faint) label">
           {label}
         </p>
 

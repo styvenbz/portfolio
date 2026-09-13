@@ -17,10 +17,13 @@
   --color-accent: oklch(0.55 0.18 255);
   --color-accent-ink: oklch(0.99 0 0);
 
-  /* Type */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  /* Type — one family, two weights.
+     Book (400) for reading, Medium (500) for headings and labels. */
+  --font-sans: var(--font-neue-montreal), system-ui, sans-serif;
+  --font-display: var(--font-neue-montreal), system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+  --weight-body: 400;
+  --weight-heading: 500;
 
   /* Fluid display sizes */
   --text-display: clamp(2.75rem, 1.2rem + 6.4vw, 7.5rem);
@@ -72,7 +75,17 @@
     background-color: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-synthesis-weight: none;
+    font-weight: var(--weight-body);
+    /* Only Book and Medium are loaded. Without this the browser would
+       synthesise the missing faces, which looks smeared at display sizes. */
+    font-synthesis: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: var(--weight-heading);
   }
 
   ::selection {
@@ -85,6 +98,19 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
+}
+
+/* ---------------------------------------------------------------
+   LABEL
+   Small caps-style labels — eyebrows, meta keys, section nav. Uses
+   Montreal Medium with wide tracking rather than a system mono, so
+   the page stays in one typeface.
+   --------------------------------------------------------------- */
+@utility label {
+  font-weight: var(--weight-heading);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 /* ---------------------------------------------------------------

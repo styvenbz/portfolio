@@ -20,7 +20,7 @@ export function PasswordGate({
   return (
     <div className="px-(--spacing-gutter) flex min-h-[70vh] items-center">
       <div className="mx-auto w-full max-w-[36rem]">
-        <p className="text-(--color-ink-faint) mb-4 font-mono text-xs tracking-[0.2em] uppercase">
+        <p className="text-(--color-ink-faint) mb-4 label">
           Protected
         </p>
         <h1 className="text-title text-balance">{title}</h1>

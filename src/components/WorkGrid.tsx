@@ -30,7 +30,7 @@ export function WorkGrid({ studies }: { studies: CaseStudy[] }) {
             />
             <div className="mt-4 flex items-baseline justify-between gap-4">
               <h3 className="text-xl tracking-tight">{study.title}</h3>
-              <span className="text-(--color-ink-faint) font-mono text-xs">{study.year}</span>
+              <span className="text-(--color-ink-faint) text-xs">{study.year}</span>
             </div>
             {study.summary ? (
               <p className="text-(--color-ink-muted) mt-2 max-w-prose text-sm">

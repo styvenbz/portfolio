@@ -56,7 +56,7 @@ export function BlockRenderer({ blocks }: { blocks: readonly Block[] }) {
                 className={`${widthClass.content} scroll-mt-28`}
               >
                 {value.eyebrow ? (
-                  <p className="text-(--color-accent) mb-4 font-mono text-xs tracking-[0.2em] uppercase">
+                  <p className="text-(--color-accent) mb-4 label">
                     {value.eyebrow}
                   </p>
                 ) : null}

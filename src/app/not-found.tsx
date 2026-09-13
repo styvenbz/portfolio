@@ -7,7 +7,7 @@ export default async function NotFound() {
   return (
     <main className="px-(--spacing-gutter) flex min-h-screen items-center">
       <div className="mx-auto w-full max-w-[92rem]">
-        <p className="text-(--color-ink-faint) mb-6 font-mono text-xs tracking-[0.2em] uppercase">
+        <p className="text-(--color-ink-faint) mb-6 label">
           404
         </p>
         <h1 className="text-display max-w-[14ch] text-balance">

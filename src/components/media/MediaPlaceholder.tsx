@@ -8,7 +8,7 @@ export function MediaPlaceholder({ className }: { className?: string }) {
       aria-hidden
       className={`bg-(--color-bg-subtle) border-(--color-line) flex aspect-[16/10] w-full items-center justify-center border ${className ?? ''}`}
     >
-      <span className="text-(--color-ink-faint) font-mono text-xs tracking-widest uppercase">
+      <span className="text-(--color-ink-faint) label">
         Media
       </span>
     </div>
