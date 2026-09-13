@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { BlockRenderer } from '@/components/blocks/BlockRenderer'
+import { CaseStudyNav } from '@/components/CaseStudyNav'
+import { NextProject } from '@/components/NextProject'
 import { CloudinaryMedia } from '@/components/media/CloudinaryMedia'
 import { PasswordGate } from '@/components/PasswordGate'
-import { getCaseStudies, getCaseStudy } from '@/lib/content'
+import { getCaseStudies, getCaseStudy, getSiteSettings } from '@/lib/content'
 import { gateMisconfigured, isUnlocked } from '@/lib/gate'
 import { hasImage, ogImageUrl } from '@/lib/cloudinary'
 import { headingId } from '@/lib/headings'
@@ -57,8 +59,20 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const study = await getCaseStudy(slug)
+  const [study, allStudies, settings] = await Promise.all([
+    getCaseStudy(slug),
+    getCaseStudies(),
+    getSiteSettings(),
+  ])
   if (!study) notFound()
+
+  /* Wraps around, so the last case study leads back to the first rather than
+     dead-ending the reader. */
+  const currentIndex = allStudies.findIndex((item) => item.slug === slug)
+  const nextStudy =
+    allStudies.length > 1 && currentIndex !== -1
+      ? allStudies[(currentIndex + 1) % allStudies.length]
+      : null
 
   /* The gate is resolved on the server and the body is never rendered while
      locked — so protected content never reaches the client unauthenticated. */
@@ -127,26 +141,20 @@ export default async function CaseStudyPage({
         </div>
       ) : null}
 
-      {sections.length > 1 ? (
-        <nav
-          aria-label="Sections"
-          className="px-(--spacing-gutter) mt-(--spacing-section)"
-        >
-          <ol className="text-(--color-ink-faint) mx-auto flex w-full max-w-[72ch] flex-wrap gap-x-6 gap-y-2 font-mono text-xs">
-            {sections.map((section) => (
-              <li key={section.id}>
-                <a href={`#${section.id}`} className="hover:text-(--color-ink) transition-colors">
-                  {section.text}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      ) : null}
+      {/* The nav and the body share a parent on purpose: a sticky element only
+          sticks within its containing block, so wrapping the nav on its own
+          would let it scroll away with the first section. */}
+      <div className="mt-(--spacing-section)">
+        {sections.length > 1 ? <CaseStudyNav sections={sections} /> : null}
 
-      <div className="px-(--spacing-gutter) mt-(--spacing-section)">
-        <BlockRenderer blocks={study.body} />
+        <div className="px-(--spacing-gutter) mt-(--spacing-section)">
+          <BlockRenderer blocks={study.body} />
+        </div>
       </div>
+
+      {nextStudy ? (
+        <NextProject study={nextStudy} label={settings?.nextProjectLabel ?? ''} />
+      ) : null}
     </main>
   )
 }

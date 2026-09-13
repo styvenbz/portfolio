@@ -32,6 +32,9 @@
   --text-lead: clamp(1.125rem, 0.95rem + 0.7vw, 1.5rem);
   --text-lead--line-height: 1.5;
 
+  /* Chrome */
+  --header-height: 4.25rem;
+
   /* Rhythm */
   --spacing-gutter: clamp(1.25rem, 0.7rem + 2.4vw, 3.5rem);
   --spacing-section: clamp(5rem, 3rem + 9vw, 12rem);

@@ -1,5 +1,6 @@
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
+import { SkipLink } from '@/components/SkipLink'
 import { MotionProvider } from '@/components/motion/MotionProvider'
 import { SmoothScroll } from '@/components/motion/SmoothScroll'
 import { getSiteSettings } from '@/lib/content'
@@ -17,9 +18,12 @@ export default async function SiteLayout({
 
   return (
     <MotionProvider intensity={settings?.motionIntensity ?? 'full'}>
+      <SkipLink label={settings?.skipLinkLabel ?? ''} />
       <SmoothScroll />
       <SiteHeader />
-      {children}
+      <div id="main" tabIndex={-1}>
+        {children}
+      </div>
       <SiteFooter />
     </MotionProvider>
   )

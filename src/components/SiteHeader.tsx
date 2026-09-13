@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SiteNavLink } from '@/components/SiteNavLink'
 import { getSiteSettings } from '@/lib/content'
 
 export async function SiteHeader() {
@@ -13,9 +14,7 @@ export async function SiteHeader() {
         <ul className="flex items-center gap-6">
           {settings?.navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href ?? '/'} className="hover:opacity-60 transition-opacity">
-                {link.label}
-              </Link>
+              <SiteNavLink href={link.href ?? '/'} label={link.label ?? ''} />
             </li>
           ))}
         </ul>

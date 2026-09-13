@@ -220,6 +220,15 @@ export default config({
           }
         ),
         footerText: fields.text({ label: 'Footer text', multiline: true }),
+        skipLinkLabel: fields.text({
+          label: 'Skip link label',
+          description:
+            'The keyboard shortcut link that lets people jump past the navigation, e.g. "Skip to content". Only visible when focused via the Tab key.',
+        }),
+        nextProjectLabel: fields.text({
+          label: 'Next project label',
+          description: 'Shown above the link to the next case study, e.g. "Next project".',
+        }),
         notFoundHeading: fields.text({
           label: 'Not found — heading',
           description: 'Shown on the 404 page when a URL does not exist.',
