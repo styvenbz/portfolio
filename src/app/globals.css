@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------
+   DESIGN TOKENS
+   This is the single place to re-skin the site. Everything else
+   consumes these. Swap values here when the visual direction lands.
+   --------------------------------------------------------------- */
+@theme {
+  /* Color — neutral editorial base */
+  --color-bg: oklch(0.98 0.004 100);
+  --color-bg-subtle: oklch(0.955 0.005 100);
+  --color-surface: oklch(1 0 0);
+  --color-ink: oklch(0.18 0.01 100);
+  --color-ink-muted: oklch(0.48 0.01 100);
+  --color-ink-faint: oklch(0.66 0.008 100);
+  --color-line: oklch(0.89 0.005 100);
+  --color-accent: oklch(0.55 0.18 255);
+  --color-accent-ink: oklch(0.99 0 0);
+
+  /* Type */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Fluid display sizes */
+  --text-display: clamp(2.75rem, 1.2rem + 6.4vw, 7.5rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.035em;
+  --text-title: clamp(1.9rem, 1rem + 3.4vw, 4rem);
+  --text-title--line-height: 1.04;
+  --text-title--letter-spacing: -0.025em;
+  --text-lead: clamp(1.125rem, 0.95rem + 0.7vw, 1.5rem);
+  --text-lead--line-height: 1.5;
+
+  /* Rhythm */
+  --spacing-gutter: clamp(1.25rem, 0.7rem + 2.4vw, 3.5rem);
+  --spacing-section: clamp(5rem, 3rem + 9vw, 12rem);
+
+  /* Motion — referenced by both CSS and GSAP */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-fast: 200ms;
+  --duration-base: 500ms;
+  --duration-slow: 900ms;
+}
+
+/* ---------------------------------------------------------------
+   BASE
+   --------------------------------------------------------------- */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Lenis owns scrolling; native smooth-scroll would fight it. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------
+   REDUCED MOTION
+   Global kill-switch. The JS layer also reads this media query and
+   snaps GSAP timelines to their end state, so content is never
+   left mid-animation or invisible.
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
