@@ -11,6 +11,7 @@ summary: >-
   actually trying to do, rather than around our account model.
 featured: true
 order: 1
+accentColor: '#C2410C'
 thumbnail: {}
 heroMedia:
   discriminant: none

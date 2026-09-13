@@ -4,6 +4,7 @@ import { Prose } from '@/components/Prose'
 import { WorkGrid } from '@/components/WorkGrid'
 import { Reveal } from '@/components/motion/Reveal'
 import { SplitHeading } from '@/components/motion/SplitHeading'
+import { Marquee } from '@/components/motion/Marquee'
 import { getFeaturedCaseStudies, getHome } from '@/lib/content'
 
 export default async function HomePage() {
@@ -49,6 +50,13 @@ export default async function HomePage() {
               <Prose>{home?.introBody}</Prose>
             </Reveal>
           </div>
+        </section>
+      ) : null}
+
+      {/* Marquee */}
+      {home?.marqueeItems.length ? (
+        <section className="pb-(--spacing-section)">
+          <Marquee items={home.marqueeItems.filter((item): item is string => Boolean(item))} />
         </section>
       ) : null}
 

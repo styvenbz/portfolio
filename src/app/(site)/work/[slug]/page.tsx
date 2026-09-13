@@ -101,7 +101,16 @@ export default async function CaseStudyPage({
     })
 
   return (
-    <main>
+    /* accentColor overrides the global accent token for this page only, so the
+       eyebrows and the active section link pick it up without any component
+       needing to know the project exists. Falls back to the token when unset. */
+    <main
+      style={
+        study.accentColor
+          ? ({ '--color-accent': study.accentColor } as React.CSSProperties)
+          : undefined
+      }
+    >
       <header className="px-(--spacing-gutter) pt-40">
         <div className="mx-auto w-full max-w-[92rem]">
           <h1 className="text-display max-w-[16ch] text-balance">{study.title}</h1>

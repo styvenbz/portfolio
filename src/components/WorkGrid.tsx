@@ -19,7 +19,16 @@ export function WorkGrid({ studies }: { studies: CaseStudy[] }) {
                 className="h-auto w-full transition-transform duration-700 ease-(--ease-out-expo) group-hover:scale-[1.03]"
               />
             </div>
-            <div className="mt-5 flex items-baseline justify-between gap-4">
+            <div
+              aria-hidden
+              className="mt-5 h-px w-full origin-left scale-x-0 bg-(--color-accent) transition-transform duration-500 ease-(--ease-out-expo) group-hover:scale-x-100"
+              style={
+                study.accentColor
+                  ? ({ '--color-accent': study.accentColor } as React.CSSProperties)
+                  : undefined
+              }
+            />
+            <div className="mt-4 flex items-baseline justify-between gap-4">
               <h3 className="text-xl tracking-tight">{study.title}</h3>
               <span className="text-(--color-ink-faint) font-mono text-xs">{study.year}</span>
             </div>

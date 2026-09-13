@@ -15,8 +15,11 @@ export async function SiteFooter() {
               {settings.email}
             </a>
           ) : null}
+          {settings?.roleLine ? (
+            <p className="text-(--color-ink-muted) mt-6 text-sm">{settings.roleLine}</p>
+          ) : null}
           {settings?.footerText ? (
-            <p className="text-(--color-ink-faint) mt-6 text-sm">{settings.footerText}</p>
+            <p className="text-(--color-ink-faint) mt-2 text-sm">{settings.footerText}</p>
           ) : null}
         </div>
 

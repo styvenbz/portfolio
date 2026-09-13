@@ -13,7 +13,12 @@ introBody: |
 
   The case studies below show the reasoning, not just the final pixels.
 workHeading: Selected work
-marqueeItems: []
+marqueeItems:
+  - Product design
+  - UX research
+  - Design systems
+  - Prototyping
+  - Service design
 ctaHeading: Let's talk about what you're building.
 ctaLabel: Get in touch
 ctaHref: mailto:stybedoya@hugeinc.com
