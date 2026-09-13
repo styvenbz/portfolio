@@ -1,0 +1,13 @@
+name: Portfolio
+roleLine: Product Designer
+email: stybedoya@hugeinc.com
+navLinks:
+  - label: Work
+    href: /work
+  - label: About
+    href: /about
+socialLinks:
+  - label: LinkedIn
+    href: https://linkedin.com
+footerText: Designed and built in 2026.
+motionIntensity: full

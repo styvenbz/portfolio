@@ -1,0 +1,21 @@
+title: Internal Platform
+client: Confidential
+role: Senior Product Designer
+year: '2024'
+disciplines:
+  - Service Design
+  - Design System
+summary: >-
+  A two-year platform consolidation for an enterprise client. Covered by an NDA.
+featured: true
+order: 2
+thumbnail: {}
+heroMedia:
+  discriminant: none
+  value: null
+access: protected
+body:
+  - discriminant: richText
+    value: |
+      This content is protected and should never render without a password.
+ogImage: {}
