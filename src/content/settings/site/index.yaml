@@ -11,3 +11,6 @@ socialLinks:
     href: https://linkedin.com
 footerText: Designed and built in 2026.
 motionIntensity: full
+notFoundHeading: This page doesn't exist.
+notFoundBody: The link may be out of date, or the work may have been taken down.
+notFoundLinkLabel: Back to work

@@ -220,6 +220,19 @@ export default config({
           }
         ),
         footerText: fields.text({ label: 'Footer text', multiline: true }),
+        notFoundHeading: fields.text({
+          label: 'Not found — heading',
+          description: 'Shown on the 404 page when a URL does not exist.',
+          multiline: true,
+        }),
+        notFoundBody: fields.text({
+          label: 'Not found — body',
+          multiline: true,
+        }),
+        notFoundLinkLabel: fields.text({
+          label: 'Not found — link label',
+          description: 'Label for the link back to the home page, e.g. "Back to work".',
+        }),
         motionIntensity: fields.select({
           label: 'Motion intensity',
           description:
