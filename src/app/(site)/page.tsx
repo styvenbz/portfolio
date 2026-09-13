@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { CloudinaryMedia } from '@/components/media/CloudinaryMedia'
 import { Prose } from '@/components/Prose'
 import { WorkGrid } from '@/components/WorkGrid'
+import { Reveal } from '@/components/motion/Reveal'
+import { SplitHeading } from '@/components/motion/SplitHeading'
 import { getFeaturedCaseStudies, getHome } from '@/lib/content'
 
 export default async function HomePage() {
@@ -15,13 +17,15 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="px-(--spacing-gutter) pt-40 pb-(--spacing-section)">
         <div className="mx-auto w-full max-w-[92rem]">
-          <h1 className="text-display max-w-[18ch] text-balance">
+          <SplitHeading className="text-display max-w-[18ch] text-balance">
             {home?.heroHeadline}
-          </h1>
+          </SplitHeading>
           {home?.heroSubline ? (
-            <p className="text-lead text-(--color-ink-muted) mt-8 max-w-[46ch]">
-              {home.heroSubline}
-            </p>
+            <Reveal delay={0.35}>
+              <p className="text-lead text-(--color-ink-muted) mt-8 max-w-[46ch]">
+                {home.heroSubline}
+              </p>
+            </Reveal>
           ) : null}
         </div>
 
@@ -37,13 +41,13 @@ export default async function HomePage() {
         <section className="px-(--spacing-gutter) pb-(--spacing-section)">
           <div className="mx-auto grid w-full max-w-[92rem] gap-10 md:grid-cols-12">
             {home?.introHeading ? (
-              <h2 className="text-title md:col-span-5 text-balance">
-                {home.introHeading}
-              </h2>
+              <Reveal className="md:col-span-5">
+                <h2 className="text-title text-balance">{home.introHeading}</h2>
+              </Reveal>
             ) : null}
-            <div className="md:col-span-6 md:col-start-7">
+            <Reveal delay={0.1} className="md:col-span-6 md:col-start-7">
               <Prose>{home?.introBody}</Prose>
-            </div>
+            </Reveal>
           </div>
         </section>
       ) : null}
@@ -64,7 +68,9 @@ export default async function HomePage() {
       {home?.ctaHeading ? (
         <section className="px-(--spacing-gutter) pb-(--spacing-section)">
           <div className="mx-auto w-full max-w-[92rem]">
-            <h2 className="text-display max-w-[16ch] text-balance">{home.ctaHeading}</h2>
+            <Reveal>
+              <h2 className="text-display max-w-[16ch] text-balance">{home.ctaHeading}</h2>
+            </Reveal>
             {home.ctaLabel && home.ctaHref ? (
               <Link
                 href={home.ctaHref}

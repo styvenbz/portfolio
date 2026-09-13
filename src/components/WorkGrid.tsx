@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CloudinaryImage } from '@/components/media/CloudinaryImage'
+import { Reveal } from '@/components/motion/Reveal'
 import type { CaseStudy } from '@/lib/content'
 
 function LockBadge() {
@@ -22,8 +23,9 @@ function LockBadge() {
 export function WorkGrid({ studies }: { studies: CaseStudy[] }) {
   return (
     <ul className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2">
-      {studies.map((study) => (
+      {studies.map((study, index) => (
         <li key={study.slug}>
+          <Reveal delay={(index % 2) * 0.08}>
           <Link href={`/work/${study.slug}`} className="group block">
             <div className="relative overflow-hidden">
               {study.access === 'protected' ? <LockBadge /> : null}
@@ -43,6 +45,7 @@ export function WorkGrid({ studies }: { studies: CaseStudy[] }) {
               </p>
             ) : null}
           </Link>
+          </Reveal>
         </li>
       ))}
     </ul>
