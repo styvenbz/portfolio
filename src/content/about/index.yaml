@@ -1,15 +1,79 @@
-heading: About
-portrait: {}
-bio: |
-  I'm a product designer focused on research-led work in complex domains.
+heading: Design. Learn. Teach.
+portrait:
+  src: /images/about/portrait/src.avif
+  alt: >-
+    Styven giving a design talk to a room of students in front of a projected
+    slide.
+  caption: ''
+  width: 2198
+  height: 1238
+bio: >
+  I create digital experiences that feel thoughtful and human, always learning
+  and sharing as I grow.
 
-  I care about the unglamorous middle of the process: the messy synthesis, the
-  argument about scope, the third round of usability testing that changes the
-  whole direction.
-experience: []
+
+  **Design, community, and continuous learning**
+
+
+  I’ve always been drawn to both technology and creativity. I studied visual
+  arts and entered the tech world through a bootcamp, which led me to my first
+  role as a UX/UI designer at SoftwareOne. Later, I expanded into the
+  international market, working as a Senior UI Interface Designer at Rockwell
+  Automation and now at Huge, where I’ve had the opportunity to collaborate with
+  Google for almost five years.
+
+
+  Along the way, I’ve given talks on design, contributed to local tech
+  communities, and volunteered to inspire new talent to explore the world of
+  technology.
+
+
+  More than 6 years of experience working for brands, crafting digital products,
+  and interactive experiences.
+experience:
+  - company: Huge
+    role: Visual & UI designer, working for Google
+    period: 2021 — Present
+    description: |-
+      Google Chromebook — UI / Visual design
+      Google for Education — UI / Visual design
+      Android — UI / Visual design
+      Google Maestro / Search — UI design
+      OLI / Olympic Games 2024 — Visual design
+      Google TV — UI / Visual design
+      Google AFF / Ads — UI / Visual design
+      AI challenge for Google — UX/UI design
+      Stellantis — Visual design
+  - company: Rockwell Automation
+    role: Senior UI interface designer
+    period: '2021'
+    description: FactoryTalk Design Studio — UI design
+  - company: SoftwareONE
+    role: UX/UI designer
+    period: '2019'
+    description: |-
+      EPM app — UX/UI design
+      Puntos Colombia app — Visual QA
+      Protección — UX workshops
+      Atlético Nacional app — UX/UI design
+      Ecopetrol chatbot — UX/UI
+  - company: Freelance
+    role: UX/UI, web and brand design
+    period: ''
+    description: |-
+      Ambi Comunidad — UX/UI design, web design
+      Escuela Casa Palabra — UX/UI design, web design
+      Casla.us — Web design, brand design
+      Madre Jaguar Foundation — UX/UI design, web design
+      Maia, payments startup — UX/UI design, web design
+      Universidad Eafit, Un café por la sostenibilidad — UX/UI design
+      Universidad Eafit, Vento — UX/UI design
+      Tech Bootcamp — UX/UI design mentor
 skills:
-  - Product design
-  - UX research
-  - Design systems
-  - Prototyping
+  - Visual design
+  - UI design
+  - UX design
+  - Web pages
 cvLabel: Download CV (PDF)
+experienceHeading: Design across industries and markets
+skillsHeading: What I do

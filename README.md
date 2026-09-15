@@ -33,7 +33,7 @@ studies stay locked.
 |---|---|
 | `keystatic.config.ts` | The whole content model |
 | `src/cms/blocks.ts` | Case-study block types |
-| `src/cms/fields/cloudinary.ts` | Media field shapes |
+| `src/cms/fields/media.ts` | Media field shapes (files stored in `public/images/`) |
 | `src/lib/content.ts` | The only way to read content |
 | `src/lib/gate.ts` | Password gating for NDA work |
 | `src/components/motion/` | Lenis, GSAP and page transitions |

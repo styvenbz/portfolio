@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { CloudinaryImage } from '@/components/media/CloudinaryImage'
+import { ContentImage } from '@/components/media/ContentImage'
 import { Prose } from '@/components/Prose'
 import { getAbout } from '@/lib/content'
 
@@ -15,7 +15,7 @@ export default async function AboutPage() {
 
         <div className="mt-(--spacing-section) grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
-            <CloudinaryImage
+            <ContentImage
               value={about?.portrait}
               sizes="(max-width: 768px) 100vw, 40vw"
               className="h-auto w-full"
@@ -36,7 +36,7 @@ export default async function AboutPage() {
             {about?.experience.length ? (
               <section className="mt-20">
                 <h2 className="text-(--color-ink-faint) border-(--color-line) border-t pt-6 label">
-                  Experience
+                  {about.experienceHeading}
                 </h2>
                 <ul className="mt-8 flex flex-col gap-10">
                   {about.experience.map((item, index) => (
@@ -49,7 +49,7 @@ export default async function AboutPage() {
                       </div>
                       <p className="text-(--color-ink-muted) mt-1 text-sm">{item.role}</p>
                       {item.description ? (
-                        <p className="text-(--color-ink-muted) mt-3 max-w-prose text-sm">
+                        <p className="text-(--color-ink-muted) mt-3 max-w-prose text-sm whitespace-pre-line">
                           {item.description}
                         </p>
                       ) : null}
@@ -62,7 +62,7 @@ export default async function AboutPage() {
             {about?.skills.length ? (
               <section className="mt-20">
                 <h2 className="text-(--color-ink-faint) border-(--color-line) border-t pt-6 label">
-                  Skills
+                  {about.skillsHeading}
                 </h2>
                 <ul className="mt-8 flex flex-wrap gap-x-3 gap-y-2 text-sm">
                   {about.skills.map((skill, index) => (

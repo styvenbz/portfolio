@@ -1,14 +1,11 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { BlockRenderer } from '@/components/blocks/BlockRenderer'
-import { CaseStudyNav } from '@/components/CaseStudyNav'
-import { NextProject } from '@/components/NextProject'
-import { CloudinaryMedia } from '@/components/media/CloudinaryMedia'
+import { CaseStudyHeader } from '@/components/case-study/CaseStudyHeader'
+import { CaseStudySections } from '@/components/case-study/CaseStudySections'
 import { PasswordGate } from '@/components/PasswordGate'
 import { getCaseStudies, getCaseStudy, getSiteSettings } from '@/lib/content'
 import { gateMisconfigured, isUnlocked } from '@/lib/gate'
-import { hasImage, ogImageUrl } from '@/lib/cloudinary'
-import { headingId } from '@/lib/headings'
+import { hasImage } from '@/lib/media'
 
 /**
  * Only PUBLIC case studies are prerendered.
@@ -48,7 +45,8 @@ export async function generateMetadata({
     openGraph: {
       title: study.metaTitle || study.title,
       description: study.metaDescription || study.summary || undefined,
-      images: image ? [ogImageUrl(image.publicId)] : undefined,
+      // Relative paths resolve against metadataBase (the Site URL in SEO defaults).
+      images: image ? [image.src] : undefined,
     },
   }
 }
@@ -59,20 +57,8 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const [study, allStudies, settings] = await Promise.all([
-    getCaseStudy(slug),
-    getCaseStudies(),
-    getSiteSettings(),
-  ])
+  const [study, settings] = await Promise.all([getCaseStudy(slug), getSiteSettings()])
   if (!study) notFound()
-
-  /* Wraps around, so the last case study leads back to the first rather than
-     dead-ending the reader. */
-  const currentIndex = allStudies.findIndex((item) => item.slug === slug)
-  const nextStudy =
-    allStudies.length > 1 && currentIndex !== -1
-      ? allStudies[(currentIndex + 1) % allStudies.length]
-      : null
 
   /* The gate is resolved on the server and the body is never rendered while
      locked — so protected content never reaches the client unauthenticated. */
@@ -88,82 +74,19 @@ export default async function CaseStudyPage({
     )
   }
 
-  const sections = study.body
-    .map((block, index) => ({ block, index }))
-    .filter(
-      ({ block }) =>
-        block.discriminant === 'sectionHeading' &&
-        (block.value as { anchorInNav?: boolean }).anchorInNav
-    )
-    .map(({ block, index }) => {
-      const value = block.value as { text: string }
-      return { id: headingId(value.text, index), text: value.text }
-    })
-
   return (
-    /* accentColor overrides the global accent token for this page only, so the
-       eyebrows and the active section link pick it up without any component
-       needing to know the project exists. Falls back to the token when unset. */
-    <main
-      style={
-        study.accentColor
-          ? ({ '--color-accent': study.accentColor } as React.CSSProperties)
-          : undefined
-      }
-    >
-      <header className="px-(--spacing-gutter) pt-40">
-        <div className="mx-auto w-full max-w-[92rem]">
-          <h1 className="text-display max-w-[16ch] text-balance">{study.title}</h1>
-
-          <dl className="border-(--color-line) mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t pt-8 md:grid-cols-4">
-            {[
-              { label: 'Client', value: study.client },
-              { label: 'Role', value: study.role },
-              { label: 'Year', value: study.year },
-              {
-                label: 'Disciplines',
-                value: study.disciplines.length ? study.disciplines.join(', ') : null,
-              },
-            ]
-              .filter((item) => item.value)
-              .map((item) => (
-                <div key={item.label}>
-                  <dt className="text-(--color-ink-faint) label">
-                    {item.label}
-                  </dt>
-                  <dd className="mt-2 text-sm">{item.value}</dd>
-                </div>
-              ))}
-          </dl>
-
-          {study.summary ? (
-            <p className="text-lead mt-16 max-w-[46ch]">{study.summary}</p>
-          ) : null}
-        </div>
-      </header>
-
-      {study.heroMedia ? (
-        <div className="px-(--spacing-gutter) mt-20">
-          <div className="mx-auto w-full max-w-[92rem]">
-            <CloudinaryMedia media={study.heroMedia} priority className="h-auto w-full" />
-          </div>
-        </div>
-      ) : null}
-
-      {/* The nav and the body share a parent on purpose: a sticky element only
-          sticks within its containing block, so wrapping the nav on its own
-          would let it scroll away with the first section. */}
-      <div className="mt-(--spacing-section)">
-        {sections.length > 1 ? <CaseStudyNav sections={sections} /> : null}
-
-        <div className="px-(--spacing-gutter) mt-(--spacing-section)">
-          <BlockRenderer blocks={study.body} />
-        </div>
-      </div>
-
-      {nextStudy ? (
-        <NextProject study={nextStudy} label={settings?.nextProjectLabel ?? ''} />
-      ) : null}
+    <main className="pt-[calc(var(--header-height)+1rem)]">
+      <article>
+        <CaseStudyHeader
+          study={study}
+          liveSiteLabel={settings?.liveSiteLabel ?? ''}
+          externalLinkLabel={settings?.externalLinkLabel ?? ''}
+        />
+        <CaseStudySections
+          sections={study.body}
+          labels={{ zoom: settings?.zoomImageLabel ?? '', close: settings?.closeLabel ?? '' }}
+        />
+      </article>
     </main>
   )
 }

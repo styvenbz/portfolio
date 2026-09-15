@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
 import { WorkGrid } from '@/components/WorkGrid'
-import { getCaseStudies, getHome } from '@/lib/content'
+import { getCaseStudies, getHome, getSiteSettings } from '@/lib/content'
 
 export const metadata: Metadata = { title: 'Work' }
 
 export default async function WorkPage() {
-  const [studies, home] = await Promise.all([getCaseStudies(), getHome()])
+  const [studies, home, settings] = await Promise.all([
+    getCaseStudies(),
+    getHome(),
+    getSiteSettings(),
+  ])
 
   return (
     <main className="px-(--spacing-gutter) pt-40">
@@ -14,7 +18,11 @@ export default async function WorkPage() {
           {home?.workHeading}
         </h1>
         <div className="mt-(--spacing-section)">
-          <WorkGrid studies={studies} />
+          <WorkGrid
+            studies={studies}
+            externalLinkLabel={settings?.externalLinkLabel ?? ''}
+            protectedLabel={settings?.protectedLabel ?? ''}
+          />
         </div>
       </div>
     </main>

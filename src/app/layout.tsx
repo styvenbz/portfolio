@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getSeoDefaults } from '@/lib/content'
-import { ogImageUrl, hasImage } from '@/lib/cloudinary'
+import { hasImage } from '@/lib/media'
 import { neueMontreal } from './fonts'
 import './globals.css'
 
@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: seo?.defaultTitle ?? undefined,
       description: seo?.defaultDescription ?? undefined,
       images: hasImage(seo?.defaultOgImage)
-        ? [ogImageUrl(seo.defaultOgImage.publicId)]
+        ? [seo.defaultOgImage.src]
         : undefined,
     },
   }

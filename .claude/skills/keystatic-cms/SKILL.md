@@ -42,10 +42,14 @@ placeholder copy ships to production.
 
 ## Media
 
-All images and video go to **Cloudinary**, referenced by public ID through the helpers in
-`src/cms/fields/cloudinary.ts` (`cloudinaryImage`, `cloudinaryVideo`, `cloudinaryMedia`).
+All images and video are stored **in the repository** under `public/images/<area>/` and uploaded
+through the helpers in `src/cms/fields/media.ts` (`contentImage`, `contentVideo`, `contentMedia`).
+Keystatic writes the file on upload; in production GitHub mode that becomes a commit.
 
-- **Never commit images or video to the repo.** Video in git bloats the repo and slows builds.
+- **Keep files web-sized** — images ≲1 MB and ≲2400px wide, video ≲10 MB. Every byte lives in
+  git history forever; Next.js resizes images on request, so huge originals buy nothing.
+- **Never drop media files in by hand** outside a Keystatic field — the CMS couldn't show or
+  replace them.
 - Reuse the helpers — don't hand-roll another media field shape. One shape, one renderer.
 - Every image field carries `alt`. Rendering an image without alt is a bug.
 
@@ -61,7 +65,7 @@ Case-study passwords therefore live in Vercel environment variables
 
 - [ ] Every string and asset it renders comes from Keystatic
 - [ ] Each new field has a designer-readable `description`
-- [ ] Media uses the Cloudinary helpers; nothing binary added to the repo
+- [ ] Media goes through the `media.ts` helpers and is web-sized
 - [ ] Images have alt text
 - [ ] Edited it live at `/keystatic` and saw the page change
 - [ ] `npm run typecheck` and `npm run build` pass

@@ -34,9 +34,31 @@
   --text-title--letter-spacing: -0.025em;
   --text-lead: clamp(1.125rem, 0.95rem + 0.7vw, 1.5rem);
   --text-lead--line-height: 1.5;
+  --text-hero: clamp(2.25rem, 5vw, 4.5rem);
+  --text-hero--line-height: 1.12;
+  --text-hero--letter-spacing: -0.03em;
+  --text-intro: clamp(1.0625rem, 0.8rem + 0.6vw, 1.5rem);
+  --text-intro--line-height: 1.55;
 
-  /* Chrome */
-  --header-height: 4.25rem;
+  /* Case study type — header, section headings, reading text */
+  --text-case-title: clamp(2rem, 1.4rem + 1.6vw, 2.5rem);
+  --text-case-title--line-height: 1.2;
+  --text-case-title--letter-spacing: -0.02em;
+  --text-case-heading: clamp(1.625rem, 1.1rem + 1.4vw, 2.25rem);
+  --text-case-heading--line-height: 1.22;
+  --text-case-heading--letter-spacing: -0.02em;
+  --text-case-body: clamp(1rem, 0.92rem + 0.25vw, 1.125rem);
+  --text-case-body--line-height: 1.7;
+
+  /* Case study bands */
+  --color-band-dark: oklch(0.25 0 0);
+  --color-before: oklch(0.52 0.19 27);
+  --color-after: oklch(0.5 0.12 150);
+  --spacing-band: clamp(4.5rem, 2.5rem + 7vw, 10rem);
+
+  /* Chrome — the floating nav's footprint once tucked (top offset + pill
+     height + breathing room). Sticky elements sit below this. */
+  --header-height: 7rem;
 
   /* Rhythm */
   --spacing-gutter: clamp(1.25rem, 0.7rem + 2.4vw, 3.5rem);
@@ -45,6 +67,7 @@
   /* Motion — referenced by both CSS and GSAP */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
   --duration-fast: 200ms;
   --duration-base: 500ms;
   --duration-slow: 900ms;
@@ -111,6 +134,71 @@
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------
+   ENTRANCE
+   Above-the-fold fade-up. CSS rather than GSAP so it runs from the
+   first paint: a JS reveal would show server-rendered text, hide it
+   on hydration, then animate it back — a visible flash on the hero.
+   Set the stagger with an inline animation-delay.
+   --------------------------------------------------------------- */
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@utility enter-up {
+  animation: enter-up 1s ease both;
+}
+
+/* The floating nav drops in from slightly below its resting place. */
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+@utility nav-in {
+  animation: nav-in 0.9s var(--ease-out-quart) both;
+}
+
+[data-motion='subtle'] .enter-up,
+[data-motion='subtle'].nav-in {
+  animation: none;
+}
+
+/* ---------------------------------------------------------------
+   DARK BAND
+   Case study sections can sit on a dark band. Rather than every
+   component knowing about it, the band re-points the colour tokens,
+   so anything inside that uses them flips automatically.
+   --------------------------------------------------------------- */
+@utility band-dark {
+  --color-bg: var(--color-band-dark);
+  --color-bg-subtle: oklch(0.3 0 0);
+  --color-ink: oklch(0.98 0.004 100);
+  --color-ink-muted: oklch(0.98 0.004 100 / 0.6);
+  --color-ink-faint: oklch(0.98 0.004 100 / 0.42);
+  --color-line: oklch(1 0 0 / 0.12);
+  --color-before: oklch(0.72 0.15 27);
+  --color-after: oklch(0.78 0.13 150);
+}
+
+/* Full-screen image viewer on case studies. */
+dialog.zoom-dialog[open] {
+  animation: zoom-fade 0.25s var(--ease-out-quart);
+}
+dialog.zoom-dialog[open]::backdrop {
+  animation: zoom-fade 0.25s var(--ease-out-quart);
+}
+@keyframes zoom-fade {
+  from {
+    opacity: 0;
+  }
 }
 
 /* ---------------------------------------------------------------

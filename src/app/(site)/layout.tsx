@@ -21,7 +21,8 @@ export default async function SiteLayout({
       <SkipLink label={settings?.skipLinkLabel ?? ''} />
       <SmoothScroll />
       <SiteHeader />
-      <div id="main" tabIndex={-1}>
+      {/* data-motion lets CSS-only animations honour the CMS setting too. */}
+      <div id="main" tabIndex={-1} data-motion={settings?.motionIntensity ?? 'full'}>
         {children}
       </div>
       <SiteFooter />

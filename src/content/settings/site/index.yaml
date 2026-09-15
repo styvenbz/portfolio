@@ -1,18 +1,31 @@
-name: Portfolio
-roleLine: Product Designer
+name: Styven Bedoya
+roleLine: Visual design · UX/UI design · Web pages
 email: stybedoya@hugeinc.com
+logo: {}
+logoHover: {}
 navLinks:
   - label: Work
     href: /work
   - label: About
     href: /about
+navCta:
+  label: Contact
+  href: /contact
 socialLinks:
+  - label: X
+    href: https://x.com/styvenbz
+    icon: {}
   - label: LinkedIn
-    href: https://linkedin.com
-footerText: Designed and built in 2026.
+    href: https://www.linkedin.com/in/styvenbz/
+    icon: {}
+footerText: © 2025 Styven Bedoya
 motionIntensity: full
 skipLinkLabel: Skip to content
-nextProjectLabel: Next project
+externalLinkLabel: (opens in a new tab)
+protectedLabel: Protected
+zoomImageLabel: Expand image
+closeLabel: Close
 notFoundHeading: This page doesn't exist.
 notFoundBody: The link may be out of date, or the work may have been taken down.
 notFoundLinkLabel: Back to work
+liveSiteLabel: Visit site

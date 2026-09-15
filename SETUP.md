@@ -19,17 +19,15 @@ git push -u origin main
 
 ---
 
-## 2. Cloudinary (images and video)
+## 2. Images and video
 
-1. Sign up at https://cloudinary.com (the free tier is plenty).
-2. Copy your **cloud name** from the dashboard.
-3. Create an **unsigned upload preset**: Settings → Upload → Upload presets →
-   Add, signing mode **Unsigned**. Name it `portfolio`.
-4. Upload media there, and paste each asset's **public ID** into the matching
-   field in Keystatic.
+Nothing to set up. Media is stored in the repository under `public/images/` and
+uploaded through the image and video fields in Keystatic. Locally the files are
+written to disk; on the live site (GitHub mode, step 4) each upload becomes a
+commit and the site redeploys.
 
-Until `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` is set, media slots render a neutral
-placeholder — the site still builds and deploys.
+Keep files web-sized — images under ~1 MB and ~2400px wide, video under ~10 MB.
+Empty media slots render a neutral placeholder, so the site still builds.
 
 ---
 
@@ -41,7 +39,6 @@ placeholder — the site still builds and deploys.
 
    | Variable | Value |
    |---|---|
-   | `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` | your Cloudinary cloud name |
    | `AUTH_SECRET` | `openssl rand -base64 32` |
    | `CASE_PASSWORD_DEFAULT` | a shared fallback password |
 

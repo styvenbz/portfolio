@@ -1,21 +1,30 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import type { MotionIntensity } from '@/components/motion/MotionProvider'
+
+/** Scroll distance after which the pill tucks up towards the top edge. */
+const TUCK_AFTER = 208
 
 /**
- * Header chrome behaviour.
+ * Floating nav chrome: a pill fixed at the top centre of the viewport.
  *
- * Over the hero the header is transparent and uses mix-blend-difference, so it
- * inverts against whatever is behind it. That breaks down once real content
- * scrolls underneath — large headings collide with the nav and both become
- * unreadable. So past the hero it takes a solid background and drops the blend
- * mode, which is the only way to guarantee legibility over arbitrary content.
+ * It fades up into place on first load, then tucks 2rem higher once the
+ * visitor scrolls past the top of the page, so it covers less content while
+ * reading. Lives in the layout, so the entrance runs once per visit rather
+ * than on every navigation.
  */
-export function HeaderShell({ children }: { children: React.ReactNode }) {
-  const [scrolled, setScrolled] = useState(false)
+export function HeaderShell({
+  motion,
+  children,
+}: {
+  motion: MotionIntensity
+  children: React.ReactNode
+}) {
+  const [tucked, setTucked] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => setTucked(window.scrollY > TUCK_AFTER)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -23,11 +32,10 @@ export function HeaderShell({ children }: { children: React.ReactNode }) {
 
   return (
     <header
-      className={`px-(--spacing-gutter) h-(--header-height) fixed top-0 right-0 left-0 z-50 flex items-center transition-colors duration-300 ${
-        scrolled
-          ? 'bg-(--color-bg)/90 border-(--color-line) text-(--color-ink) border-b backdrop-blur-sm'
-          : 'text-white mix-blend-difference'
-      }`}
+      data-motion={motion}
+      className={`nav-in fixed top-10 left-1/2 z-50 w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 sm:top-16 ${
+        motion === 'full' ? 'transition-[translate] duration-500 ease-(--ease-out-quart)' : ''
+      } ${tucked ? '-translate-y-6 sm:-translate-y-8' : ''}`}
     >
       {children}
     </header>

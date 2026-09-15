@@ -1,24 +1,17 @@
-heroHeadline: Product designer working on complex, unglamorous problems.
-heroSubline: >-
-  Currently designing at Huge. Previously in fintech and logistics. I like the
-  parts of the job most people skip.
-heroMedia:
-  discriminant: none
-  value: null
-introHeading: I design systems, not screens.
-introBody: |
-  Most of my work happens before anything looks like a product — untangling
-  what a team actually believes, what the data says, and where those two
-  disagree.
-
-  The case studies below show the reasoning, not just the final pixels.
-workHeading: Selected work
-marqueeItems:
-  - Product design
-  - UX research
-  - Design systems
-  - Prototyping
-  - Service design
-ctaHeading: Let's talk about what you're building.
-ctaLabel: Get in touch
-ctaHref: mailto:stybedoya@hugeinc.com
+greeting: Working at Huge for Google
+rotatingPhrases:
+  - Designing digital experiences for world-class brands
+  - Projects for brands that move the world
+  - More than 6 years crafting digital products
+phraseInterval: 2
+highlights:
+  - label: Currently
+    value: Huge, designing for Google
+  - label: Previously at
+    value: Rockwell Automation & SoftwareONE
+portrait: {}
+bioHeading: Design. Learn. Teach.
+bio: >-
+  I create digital experiences that feel thoughtful and human, always learning
+  and sharing as I grow.
+workHeading: Selected projects

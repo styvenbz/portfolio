@@ -16,7 +16,9 @@ Vercel env vars (`CASE_PASSWORD_<SLUG>`), never in the CMS.
 
 ## Media
 
-Cloudinary only, via the helpers in `src/cms/fields/cloudinary.ts`. Never commit media files.
+Stored in the repo under `public/images/<area>/`, always through the Keystatic helpers in
+`src/cms/fields/media.ts` (`contentImage`, `contentVideo`, `contentMedia`). Never place media
+files by hand outside those fields, and keep them web-sized (images ≲1 MB / 2400px, video ≲10 MB).
 
 ## Commands
 
