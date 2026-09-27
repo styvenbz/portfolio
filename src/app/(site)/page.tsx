@@ -21,7 +21,12 @@ export default async function HomePage() {
         />
       ) : null}
 
-      <section id="work" className="px-(--spacing-gutter) pt-4">
+      {/* scroll-mt keeps the first row clear of the floating nav when the
+          hero button jumps here. */}
+      <section
+        id="work"
+        className="px-(--spacing-gutter) scroll-mt-[calc(var(--header-height)+1rem)] pt-4"
+      >
         <div className="mx-auto w-full max-w-[92rem]">
           {home?.workHeading ? <h2 className="sr-only">{home.workHeading}</h2> : null}
           <WorkGrid

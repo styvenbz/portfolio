@@ -41,5 +41,6 @@ export async function getFeaturedCaseStudies(): Promise<CaseStudy[]> {
 
 export const getHome = () => reader.singletons.home.read()
 export const getAbout = () => reader.singletons.about.read()
+export const getContact = () => reader.singletons.contact.read()
 export const getSiteSettings = () => reader.singletons.siteSettings.read()
 export const getSeoDefaults = () => reader.singletons.seoDefaults.read()

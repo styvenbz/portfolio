@@ -1,17 +1,78 @@
-greeting: Working at Huge for Google
+greeting: Hello, I'm Styven
 rotatingPhrases:
   - Designing digital experiences for world-class brands
   - Projects for brands that move the world
   - More than 6 years crafting digital products
 phraseInterval: 2
-highlights:
-  - label: Currently
-    value: Huge, designing for Google
-  - label: Previously at
-    value: Rockwell Automation & SoftwareONE
-portrait: {}
-bioHeading: Design. Learn. Teach.
-bio: >-
-  I create digital experiences that feel thoughtful and human, always learning
-  and sharing as I grow.
-workHeading: Selected projects
+heroSummary: >-
+  - Visual designer with a strong UX/UI foundation, working at the intersection
+  of visual craft and product thinking.
+
+  - Visual Designer at Huge, building the Google Ads for Search design system
+  and frameworks that help teams deliver faster.
+
+  - 7+ years designing for Google, Android, Google for Education, the 2024
+  Olympic Games and Rockwell Automation.
+
+  - Web experiences reaching 15M+ visits a month.
+
+  - Main designer end to end, from discovery workshops to delivery, for
+  Universidad EAFIT and EPM at SoftwareONE.
+
+  - Experience across US and LATAM corporates and global agencies, working with
+  cross-disciplinary teams and grounding decisions in user needs.
+
+  - Turning abstract ideas into polished deliverables, while exploring how AI
+  expands what designers can do.
+heroDescription: >-
+  I'm a visual designer with a strong UX/UI foundation, working at the
+  intersection of visual craft and product thinking. I'm currently a Visual
+  Designer at Huge, partnering with Google on the Google Ads for Search design
+  system, where I build frameworks that help design teams deliver faster and
+  more consistently.
+
+
+  Over the past 7+ years, I've designed B2C experiences and apps for Google,
+  Android, Google for Education, the 2024 Olympic Games, and Rockwell
+  Automation, including web experiences that reach more than 15 million visits a
+  month.
+
+
+  Along the way, I've led projects end to end as the main designer, from
+  discovery workshops with stakeholders to final delivery, for Universidad EAFIT
+  and for EPM at SoftwareONE. Working across US and LATAM corporates and global
+  design agencies has taught me to adapt quickly, collaborate across
+  disciplines, and ground every decision in clear design rationale tied to user
+  needs.
+
+
+  My superpower is turning abstract ideas into tangible, polished deliverables,
+  while constantly exploring how AI can expand what designers can do. My guiding
+  principle: tools change, but the right approach doesn't. Great design comes
+  from how you frame the problem, not from which tool or model you use.
+heroSummaryToggleLabel: 🥱 TL; DR
+highlights: []
+portrait:
+  src: /images/home/portrait/src.jpg
+  alt: Profile picture
+  width: 300
+  height: 300
+experienceHeading: Experience
+experience:
+  - role: Visual & UI designer, working for Google
+    period: 2021 — Present
+    logo:
+      src: /images/home/experience/0/logo/src.svg
+      alt: huge and google
+  - role: Senior UI designer
+    period: '2021'
+    logo:
+      src: /images/home/experience/1/logo/src.png
+  - role: UX/UI designer
+    period: '2019'
+    logo:
+      src: /images/home/experience/2/logo/src.svg
+  - role: UX/UI & Brand Design
+    company: Freelance
+    logo: {}
+workHeading: Shipped Work

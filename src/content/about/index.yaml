@@ -1,17 +1,32 @@
 heading: Design. Learn. Teach.
+subtitle: >-
+  I create digital experiences that feel thoughtful and human, always learning
+  and sharing as I grow.
 portrait:
   src: /images/about/portrait/src.avif
   alt: >-
     Styven giving a design talk to a room of students in front of a projected
     slide.
-  caption: ''
   width: 2198
   height: 1238
+gallery:
+  - src: /images/about/gallery/0/src.webp
+    alt: >-
+      Styven speaking into a microphone at a panel discussion, wearing glasses
+      and a striped shirt.
+    caption: ''
+    width: 1050
+    height: 1050
+  - src: /images/about/gallery/1/src.webp
+    alt: >-
+      Styven on stage at a conference, holding a microphone and wearing an event
+      lanyard.
+    caption: ''
+    width: 1050
+    height: 1050
+experienceHeading: Design across industries and markets
+skillsHeading: What I do
 bio: >
-  I create digital experiences that feel thoughtful and human, always learning
-  and sharing as I grow.
-
-
   **Design, community, and continuous learning**
 
 
@@ -44,6 +59,17 @@ experience:
       Google AFF / Ads — UI / Visual design
       AI challenge for Google — UX/UI design
       Stellantis — Visual design
+  - company: Freelance
+    role: UX/UI, web and brand design
+    description: |-
+      Ambi Comunidad — UX/UI design, web design
+      Escuela Casa Palabra — UX/UI design, web design
+      Casla.us — Web design, brand design
+      Madre Jaguar Foundation — UX/UI design, web design
+      Maia, payments startup — UX/UI design, web design
+      Universidad Eafit, Un café por la sostenibilidad — UX/UI design
+      Universidad Eafit, Vento — UX/UI design
+      Tech Bootcamp — UX/UI design mentor
   - company: Rockwell Automation
     role: Senior UI interface designer
     period: '2021'
@@ -57,23 +83,11 @@ experience:
       Protección — UX workshops
       Atlético Nacional app — UX/UI design
       Ecopetrol chatbot — UX/UI
-  - company: Freelance
-    role: UX/UI, web and brand design
-    period: ''
-    description: |-
-      Ambi Comunidad — UX/UI design, web design
-      Escuela Casa Palabra — UX/UI design, web design
-      Casla.us — Web design, brand design
-      Madre Jaguar Foundation — UX/UI design, web design
-      Maia, payments startup — UX/UI design, web design
-      Universidad Eafit, Un café por la sostenibilidad — UX/UI design
-      Universidad Eafit, Vento — UX/UI design
-      Tech Bootcamp — UX/UI design mentor
 skills:
   - Visual design
   - UI design
   - UX design
   - Web pages
+  - Apps
+  - Design systems
 cvLabel: Download CV (PDF)
-experienceHeading: Design across industries and markets
-skillsHeading: What I do

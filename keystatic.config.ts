@@ -26,7 +26,7 @@ export default config({
     brand: { name: 'Portfolio' },
     navigation: {
       Work: ['caseStudies'],
-      Pages: ['home', 'about'],
+      Pages: ['home', 'about', 'contact'],
       Settings: ['siteSettings', 'seoDefaults'],
     },
   },
@@ -88,6 +88,12 @@ export default config({
           label: 'Live site link',
           description:
             'Optional. Adds a link under the project facts to the shipped work, e.g. the live website. Its text comes from "Live site label" in Site settings.',
+        }),
+        tags: fields.array(fields.text({ label: 'Tag' }), {
+          label: 'Skills, tools and technologies',
+          description:
+            'Shown as small pills under the intro, e.g. "UX design", "Benchmarking", "Design system". Leave empty to hide them.',
+          itemLabel: (props) => props.value || 'Tag',
         }),
         facts: fields.array(
           fields.object({
@@ -195,6 +201,23 @@ export default config({
           defaultValue: 2,
           validation: { min: 1, max: 20 },
         }),
+        heroSummary: fields.text({
+          label: 'Hero description — short version',
+          description:
+            'The version shown by default, under the greeting and rotating phrases. Start a line with "*" or "-" to make it a bullet; other lines read as paragraphs. Leave empty to always show the long version.',
+          multiline: true,
+        }),
+        heroDescription: fields.text({
+          label: 'Hero description — long version',
+          description:
+            'Shown when the visitor switches the toggle off. Plain paragraphs, no bullets. Leave empty to always show the short version.',
+          multiline: true,
+        }),
+        heroSummaryToggleLabel: fields.text({
+          label: 'Hero description — toggle label',
+          description:
+            'The little button that switches between the two versions, e.g. "🥱 TL; DR". It only appears when both versions are filled in.',
+        }),
         highlights: fields.array(
           fields.object({
             label: fields.text({
@@ -215,24 +238,109 @@ export default config({
         ),
         portrait: contentImage({
           area: 'home',
-          label: 'Portrait',
+          label: 'Bio picture',
           description:
-            'Small round photo at the top of the right-hand column of the hero. A square image works best.',
+            'Square (1:1) photo at the top of the right-hand column of the hero, above the bio heading. Non-square images are cropped to fill the square from the centre; about 800×800px is plenty. Remember the alt text. Leave empty to hide it.',
         }),
-        bioHeading: fields.text({
-          label: 'Bio heading',
-          description: 'Short dark line above your bio in the hero, e.g. "Nice to meet you".',
-        }),
-        bio: fields.text({
-          label: 'Bio',
+        heroCtaLabel: fields.text({
+          label: 'Hero jump button — label',
           description:
-            'A few sentences in the right-hand column of the hero. Your social links (from Site settings) sit underneath it.',
-          multiline: true,
+            'Floating button at the bottom of the screen on the home page, e.g. "Check the projects". It fades away once the visitor scrolls down. Leave empty to hide it.',
         }),
+        heroCtaHref: fields.text({
+          label: 'Hero jump button — link',
+          description:
+            'Where the button jumps to. "#work" scrolls down to the project grid on this page; a path like /work opens the work page.',
+        }),
+        experienceHeading: fields.text({
+          label: 'Experience heading',
+          description:
+            'Heading above the experience list in the right-hand column of the hero, e.g. "Experience".',
+        }),
+        experience: fields.array(
+          fields.object({
+            role: fields.text({
+              label: 'Role',
+              description: 'Job title, e.g. "Product Design Lead, Ads AI".',
+            }),
+            period: fields.text({
+              label: 'Period',
+              description: 'Shown at the right of the role, e.g. "2022 — Present".',
+            }),
+            company: fields.text({
+              label: 'Company',
+              description: 'Shown under the role, next to the logo.',
+            }),
+            logo: contentImage({
+              area: 'home',
+              label: 'Company logo',
+              description:
+                'Optional small logo shown before the company name, about 16px tall. A transparent PNG/SVG in one colour works best. Without one, only the company name shows. Alt text can stay empty — the company name is right next to it.',
+            }),
+          }),
+          {
+            label: 'Experience',
+            description:
+              'Roles listed in the right-hand column of the hero, newest first. Your social links sit underneath.',
+            itemLabel: (props) =>
+              [props.fields.role.value, props.fields.company.value].filter(Boolean).join(' — ') ||
+              'Role',
+          }
+        ),
         workHeading: fields.text({
           label: 'Work section heading',
           description:
             'e.g. "Selected work". The big heading on the /work page. On the home page it is announced to screen readers above the project grid but not shown.',
+        }),
+      },
+    }),
+
+    contact: singleton({
+      label: 'Contact page',
+      path: 'src/content/contact/',
+      format: { data: 'yaml' },
+      schema: {
+        title: fields.text({
+          label: 'Page title',
+          description:
+            'Used for the browser tab and read out to screen readers at the top of the page, e.g. "Contact".',
+        }),
+        heading: fields.text({
+          label: 'Heading',
+          description: 'The big headline above the form, e.g. "Trying to get in touch?". Leave empty to show the page title only to screen readers.',
+          multiline: true,
+        }),
+        intro: fields.text({
+          label: 'Intro',
+          description: 'A short paragraph between the heading and the form. Leave empty to hide it.',
+          multiline: true,
+        }),
+        formEndpoint: fields.url({
+          label: 'Form endpoint',
+          description:
+            'The address your form posts to, from Formspree: formspree.io → your form → Integration → the URL that looks like https://formspree.io/f/abcdwxyz. It is not a password — it travels in the page like a link. Until it is set, the form shows the error message below when someone submits.',
+        }),
+        nameLabel: fields.text({ label: 'Name field label' }),
+        emailLabel: fields.text({ label: 'Email field label' }),
+        messageLabel: fields.text({ label: 'Message field label' }),
+        submitLabel: fields.text({
+          label: 'Send button label',
+          description: 'e.g. "Send message".',
+        }),
+        sendingLabel: fields.text({
+          label: 'Send button label while sending',
+          description: 'Shown on the button between pressing it and the message going through, e.g. "Sending…".',
+        }),
+        successMessage: fields.text({
+          label: 'Success message',
+          description: 'Replaces the form once a message is sent, e.g. "Thanks — I\'ll get back to you soon."',
+          multiline: true,
+        }),
+        errorMessage: fields.text({
+          label: 'Error message',
+          description:
+            'Shown under the form if sending fails, e.g. "Something went wrong. Please email me instead."',
+          multiline: true,
         }),
       },
     }),
@@ -242,8 +350,31 @@ export default config({
       path: 'src/content/about/',
       format: { data: 'yaml' },
       schema: {
-        heading: fields.text({ label: 'Heading', multiline: true }),
-        portrait: contentImage({ area: 'about', label: 'Portrait' }),
+        heading: fields.text({
+          label: 'Heading',
+          description: 'The big headline at the top of the About page, e.g. "Design. Learn. Teach."',
+          multiline: true,
+        }),
+        subtitle: fields.text({
+          label: 'Subtitle',
+          description:
+            'The grey line under the headline — one sentence on what you do. Leave empty to hide it.',
+          multiline: true,
+        }),
+        portrait: contentImage({
+          area: 'about',
+          label: 'Portrait',
+          description: 'The wide photo at the top of the left column on the About page.',
+        }),
+        gallery: fields.array(
+          contentImage({ area: 'about', label: 'Photo' }),
+          {
+            label: 'More photos',
+            description:
+              'Square photos shown two per row under the portrait, e.g. talks or events. Any shape is cropped to a square from the centre. Leave empty to hide them.',
+            itemLabel: (props) => props.fields.alt.value || 'Photo',
+          }
+        ),
         experienceHeading: fields.text({
           label: 'Experience heading',
           description: 'Small heading above the experience list, e.g. "Experience".',
@@ -306,14 +437,21 @@ export default config({
           area: 'site',
           label: 'Nav logo',
           description:
-            'The image at the left of the floating nav; clicking it goes to the home page. Shown at about 58×64px and allowed to poke out of the pill, so a cut-out avatar or memoji (transparent PNG/WebP) works best. Alt text names the link, e.g. "Home". Without an image, "Your name" shows as text instead.',
+            'The image at the left of the floating nav on every page; clicking it goes to the home page. Shown about 48px tall, so a cut-out avatar or memoji (transparent PNG/WebP) works best. Alt text names the link, e.g. "Styven Bedoya, home". Without an image, "Your name" shows as text instead.',
         }),
-        logoHover: contentImage({
-          area: 'site',
-          label: 'Nav logo — hover version',
-          description:
-            'Optional. Swapped in while someone hovers the logo, e.g. an animated GIF of the same avatar. Same size as the logo. Alt text can stay empty.',
-        }),
+        logoHoverFrames: fields.array(
+          contentImage({
+            area: 'site',
+            label: 'Expression',
+            description: 'Alt text can stay empty — the nav logo’s alt names the link.',
+          }),
+          {
+            label: 'Nav logo — hover expressions',
+            description:
+              'While someone hovers the nav logo, it flips through these images in order, then back to the main logo, and repeats. Use the same avatar with different expressions, exported on the same canvas size and position as the main logo so the head doesn’t jump between frames. Leave empty for no hover effect.',
+            itemLabel: (props) => props.fields.alt.value || 'Expression',
+          }
+        ),
         navLinks: fields.array(
           fields.object({
             label: fields.text({ label: 'Label' }),
@@ -349,7 +487,7 @@ export default config({
           area: 'site',
               label: 'Icon',
               description:
-                'Shown in the home page hero under your bio. Upload a single-colour SVG; it is tinted to match the text colour. Alt text can stay empty — the label above names the link. Without an icon, the label shows as text.',
+                'Shown in the home page hero under your bio, at about 24px. A single-colour SVG is tinted to match the text; a PNG or WebP keeps its own colours, so cut it out on a transparent background. Alt text can stay empty — the label above names the link. Without an icon, the label shows as text.',
             }),
           }),
           {

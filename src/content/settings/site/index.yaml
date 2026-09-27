@@ -1,8 +1,21 @@
 name: Styven Bedoya
-roleLine: Visual design · UX/UI design · Web pages
-email: stybedoya@hugeinc.com
-logo: {}
-logoHover: {}
+roleLine: 'Visual design · UX/UI design '
+email: dbedoyaz95@gmail.com
+logo:
+  src: /images/site/logo/src.webp
+  alt: Styven Bedoya, home
+  width: 278
+  height: 347
+logoHoverFrames:
+  - src: /images/site/logoHoverFrames/0/src.webp
+    width: 278
+    height: 347
+  - src: /images/site/logoHoverFrames/1/src.webp
+    width: 278
+    height: 347
+  - src: /images/site/logoHoverFrames/2/src.webp
+    width: 278
+    height: 347
 navLinks:
   - label: Work
     href: /work
@@ -14,18 +27,24 @@ navCta:
 socialLinks:
   - label: X
     href: https://x.com/styvenbz
-    icon: {}
-  - label: LinkedIn
+    icon:
+      src: /images/site/socialLinks/0/icon/src.png
+  - label: Linkedin
     href: https://www.linkedin.com/in/styvenbz/
-    icon: {}
-footerText: © 2025 Styven Bedoya
-motionIntensity: full
+    icon:
+      src: /images/site/socialLinks/1/icon/src.png
+  - label: Github
+    href: https://github.com/styvenbz
+    icon:
+      src: /images/site/socialLinks/2/icon/src.svg
+footerText: © 2026 Styven Bedoya
 skipLinkLabel: Skip to content
 externalLinkLabel: (opens in a new tab)
 protectedLabel: Protected
+liveSiteLabel: Visit site
 zoomImageLabel: Expand image
 closeLabel: Close
 notFoundHeading: This page doesn't exist.
 notFoundBody: The link may be out of date, or the work may have been taken down.
 notFoundLinkLabel: Back to work
-liveSiteLabel: Visit site
+motionIntensity: full

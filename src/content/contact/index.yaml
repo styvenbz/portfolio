@@ -1,0 +1,14 @@
+title: Contact
+heading: Trying to Get in Touch?
+intro: >-
+  Interested in my work and want to reach out? Shoot me a message. I'm always
+  open to discuss ideas and professional opportunities. I'll get back to you if
+  I find your message relevant or interesting.
+formEndpoint: https://formspree.io/f/meaopnqn
+nameLabel: Name
+emailLabel: Email
+messageLabel: Message
+submitLabel: Send message
+sendingLabel: Sending…
+successMessage: Thanks — your message is on its way. I'll get back to you soon.
+errorMessage: Something went wrong sending that. Please email me instead.

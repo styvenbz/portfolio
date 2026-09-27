@@ -154,6 +154,37 @@
   animation: enter-up 1s ease both;
 }
 
+/* Frosted glass. The blur alone reads as a flat tint, so the pane also gets
+   a saturation lift on what's behind it, a sheen that fades top to bottom,
+   a bright edge with an inner highlight, and a faint dark ring so it still
+   has a silhouette over the light page background. */
+@utility glass {
+  background: linear-gradient(180deg, oklch(1 0 0 / 0.55), oklch(1 0 0 / 0.3));
+  -webkit-backdrop-filter: blur(15px) saturate(170%);
+  backdrop-filter: blur(15px) saturate(170%);
+  border: 1px solid oklch(1 0 0 / 0.6);
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.8),
+    inset 0 -1px 0 oklch(1 0 0 / 0.2),
+    0 0 0 1px oklch(0.18 0.01 100 / 0.07),
+    0 10px 30px -12px oklch(0.18 0.01 100 / 0.25);
+}
+
+/* Gentle bob for the floating hero button, so it reads as hovering. */
+@keyframes float-bob {
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@utility float-bob {
+  animation: float-bob 3.2s ease-in-out infinite;
+}
+
+[data-motion='subtle'] .float-bob {
+  animation: none;
+}
+
 /* The floating nav drops in from slightly below its resting place. */
 @keyframes nav-in {
   from {
@@ -162,8 +193,11 @@
   }
 }
 
+/* `backwards`, not `both`: once finished the animation must let go. A
+   filling opacity animation makes the header a backdrop root, so the glass
+   pane inside could only blur the header itself — never the page behind. */
 @utility nav-in {
-  animation: nav-in 0.9s var(--ease-out-quart) both;
+  animation: nav-in 0.9s var(--ease-out-quart) backwards;
 }
 
 [data-motion='subtle'] .enter-up,

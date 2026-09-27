@@ -1,0 +1,108 @@
+title: Nova – AI Chatbot
+client: Google
+summary: >-
+  A chatbot for Google’s SAGE designers that centralises precedents, approvals,
+  context and documentation, so decisions are better informed and rework goes
+  down.
+subtitle: An AI guide that puts precedents, approvals and documentation a question away
+intro: >-
+  This project focuses on designing the UX/UI experience for a chatbot developed
+  for Google’s SAGE designers. The chatbot serves as a practical guide, giving
+  them quick access to previous precedents, approvals, context, and
+  documentation. By centralizing this information and leveraging AI, it helps
+  designers make better-informed decisions, reduce rework, and streamline their
+  workflows.
+keyPoints:
+  - label: Challenges
+    body: >-
+      • Create the experience from scratch, using Google’s current AI products
+      like Gemini as a reference.
+
+      • Build a custom design system that follows good patterns and best
+      practices.
+
+      • Design the visual style for both the chatbot and its brand.
+
+      • Help with interviews with designers, collecting their feedback during
+      different rounds of changes.
+  - label: Achievements
+    body: >-
+      Completed around 10 iteration cycles involving leaders, the client, and
+      SAGE designers. MVP is nearly ready, with HUGE’s development team
+      preparing to start the first phases of real testing.
+tags:
+  - UX design
+  - UI design
+  - Benchmarking
+  - Branding
+  - User flow
+  - Design system
+facts:
+  - label: Client
+    value: Google
+  - label: Agency
+    value: Huge
+featured: true
+order: 5
+thumbnail:
+  src: /images/case-studies/nova-ai-chatbot/thumbnail/src.jpg
+  alt: Nova answering a question with approval results laid out as a grid of cards.
+  width: 600
+  height: 387
+thumbnailVideo:
+  autoplay: true
+  loop: true
+  muted: true
+  controls: false
+heroMedia:
+  discriminant: image
+  value:
+    src: /images/case-studies/nova-ai-chatbot/heroMedia/value/src.jpg
+    alt: >-
+      Nova’s welcome modal on a dark interface, with the Nova logo and a short
+      explanation of what it does.
+    width: 600
+    height: 338
+access: protected
+body:
+  - discriminant: imageGrid
+    value:
+      theme: dark
+      title: Onboarding
+      titleMuted: and pre-made prompts
+      columns: '2'
+      wideLast: false
+      images:
+        - src: /images/case-studies/nova-ai-chatbot/body/0/value/images/0/src.jpg
+          alt: >-
+            Onboarding step headed “Start with a pre-made prompt”, showing a
+            grid of ready-made prompts to choose from.
+          width: 600
+          height: 338
+        - src: /images/case-studies/nova-ai-chatbot/body/0/value/images/1/src.jpg
+          alt: >-
+            Suggested prompt chips above the chat input, with one selected and
+            Nova’s answer starting underneath.
+          width: 600
+          height: 387
+  - discriminant: imageGrid
+    value:
+      theme: light
+      title: Results
+      titleMuted: as a grid or a table
+      columns: '2'
+      wideLast: false
+      images:
+        - src: /images/case-studies/nova-ai-chatbot/body/1/value/images/0/src.jpg
+          alt: >-
+            Approval results as a grid of cards, each with a screenshot, launch
+            date and owning team.
+          width: 600
+          height: 387
+        - src: /images/case-studies/nova-ai-chatbot/body/1/value/images/1/src.jpg
+          alt: >-
+            The same approval results as a table with type, device, approval
+            name, date and team columns.
+          width: 600
+          height: 388
+ogImage: {}

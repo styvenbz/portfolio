@@ -57,6 +57,19 @@ export function CaseStudyHeader({
             {study.intro ? (
               <p className="text-case-body text-(--color-ink-muted) max-w-[48rem] whitespace-pre-line">{study.intro}</p>
             ) : null}
+            {study.tags.length ? (
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {study.tags.map((tag, index) => (
+                  <li
+                    key={index}
+                    className="border-(--color-line) text-case-body rounded-full border px-4 py-1.5"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+
             {study.keyPoints.length ? (
               <dl className={`grid gap-8 sm:grid-cols-2 ${study.intro ? 'mt-8' : ''}`}>
                 {study.keyPoints.map((point, index) => (

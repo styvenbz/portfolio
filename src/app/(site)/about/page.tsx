@@ -12,14 +12,38 @@ export default async function AboutPage() {
     <main className="px-(--spacing-gutter) pt-40">
       <div className="mx-auto w-full max-w-[92rem]">
         <h1 className="text-display max-w-[16ch] text-balance">{about?.heading}</h1>
+        {about?.subtitle ? (
+          <p className="text-case-heading text-(--color-ink-muted) mt-5 max-w-[34ch] text-balance">
+            {about.subtitle}
+          </p>
+        ) : null}
 
         <div className="mt-(--spacing-section) grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
-            <ContentImage
-              value={about?.portrait}
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="h-auto w-full"
-            />
+            <div className="overflow-hidden rounded-2xl">
+              <ContentImage
+                value={about?.portrait}
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="h-auto w-full"
+              />
+            </div>
+
+            {about?.gallery.length ? (
+              <ul className="mt-4 grid grid-cols-2 gap-4">
+                {about.gallery.map((photo, index) => (
+                  <li
+                    key={index}
+                    className="bg-(--color-bg-subtle) aspect-square overflow-hidden rounded-2xl"
+                  >
+                    <ContentImage
+                      value={photo}
+                      sizes="(max-width: 768px) 45vw, 20vw"
+                      className="size-full object-cover"
+                    />
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             {about?.cvFile ? (
               <a
                 href={about.cvFile}
