@@ -14,6 +14,7 @@ tsconfig.tsbuildinfo
 # Design inbox: reference screenshots and raw assets shared with Claude.
 # Assets used on the site are imported into public/images via Keystatic fields.
 /design/
+/GALLERY/
 
 # Raw logo/source files kept locally; the site copies live in public/images.
 /logos intro/

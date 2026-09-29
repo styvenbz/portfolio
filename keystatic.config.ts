@@ -287,6 +287,36 @@ export default config({
               'Role',
           }
         ),
+        galleryWord: fields.text({
+          label: 'Gallery — background word',
+          description:
+            'The giant word behind the photo wheel below your projects, e.g. "Gallery". On phones, where the giant word is hidden, it shows as a normal title above the wheel instead.',
+        }),
+        galleryImages: fields.array(
+          contentImage({
+            area: 'home',
+            label: 'Photo',
+            description: 'Shown as a square, cropped from the centre. The photo at the front is in colour; the rest are greyscale.',
+          }),
+          {
+            label: 'Gallery — photos',
+            description:
+              'Photos on the wheel below your projects, in order. About 8–14 works best; fewer than 3 hides the section. The middle photo starts at the front.',
+            itemLabel: (props) => props.fields.alt.value || 'Photo',
+          }
+        ),
+        galleryCursorLabel: fields.text({
+          label: 'Gallery — cursor label',
+          description: 'The little pill that follows the mouse over the wheel on desktop, e.g. "Drag".',
+        }),
+        galleryPrevLabel: fields.text({
+          label: 'Gallery — previous button name',
+          description: 'Read out by screen readers for the « button, e.g. "Previous photo".',
+        }),
+        galleryNextLabel: fields.text({
+          label: 'Gallery — next button name',
+          description: 'Read out by screen readers for the » button, e.g. "Next photo".',
+        }),
         workHeading: fields.text({
           label: 'Work section heading',
           description:

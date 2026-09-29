@@ -1,5 +1,8 @@
 import { WorkGrid } from '@/components/WorkGrid'
+import { GalleryWheel } from '@/components/home/GalleryWheel'
+import { GalleryWord } from '@/components/home/GalleryWord'
 import { HomeHero } from '@/components/home/HomeHero'
+import { hasImage } from '@/lib/media'
 import { getFeaturedCaseStudies, getHome, getSiteSettings } from '@/lib/content'
 
 export default async function HomePage() {
@@ -10,6 +13,7 @@ export default async function HomePage() {
   ])
 
   const externalLinkLabel = settings?.externalLinkLabel ?? ''
+  const galleryPhotos = (home?.galleryImages ?? []).filter(hasImage)
 
   return (
     <main>
@@ -37,6 +41,31 @@ export default async function HomePage() {
           />
         </div>
       </section>
+
+      {/* The wheel needs a few photos to read as a loop. */}
+      {home && galleryPhotos.length >= 3 ? (
+        <section
+          className="relative mt-24 overflow-hidden pt-16 pb-20 md:mt-32 md:pt-[12vw]"
+        >
+          {home.galleryWord ? (
+            <>
+              <GalleryWord word={home.galleryWord} />
+              {/* A plain title on phones, where the giant word is hidden. */}
+              <h2 className="text-case-heading mb-6 px-(--spacing-gutter) text-center font-medium md:sr-only">
+                {home.galleryWord}
+              </h2>
+            </>
+          ) : null}
+          <GalleryWheel
+            photos={galleryPhotos}
+            labels={{
+              prev: home.galleryPrevLabel,
+              next: home.galleryNextLabel,
+              cursor: home.galleryCursorLabel,
+            }}
+          />
+        </section>
+      ) : null}
     </main>
   )
 }

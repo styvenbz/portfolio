@@ -4,52 +4,22 @@ rotatingPhrases:
   - Projects for brands that move the world
   - More than 6 years crafting digital products
 phraseInterval: 2
-heroSummary: >-
-  - Visual designer with a strong UX/UI foundation, working at the intersection
-  of visual craft and product thinking.
-
-  - Visual Designer at Huge, building the Google Ads for Search design system
-  and frameworks that help teams deliver faster.
-
-  - 7+ years designing for Google, Android, Google for Education, the 2024
-  Olympic Games and Rockwell Automation.
-
+heroSummary: |-
+  - Visual designer with a strong UX/UI foundation, working at the intersection of visual craft and product thinking.
+  - Visual Designer at Huge, building the Google Ads for Search design system and frameworks that help teams deliver faster.
+  - 7+ years designing for Google, Android, Google for Education, the 2024 Olympic Games and Rockwell Automation.
   - Web experiences reaching 15M+ visits a month.
+  - Main designer end to end, from discovery workshops to delivery, for Universidad EAFIT and EPM at SoftwareONE.
+  - Experience across US and LATAM corporates and global agencies, working with cross-disciplinary teams and grounding decisions in user needs.
+  - Turning abstract ideas into polished deliverables, while exploring how AI expands what designers can do.
+heroDescription: |-
+  I'm a visual designer with a strong UX/UI foundation, working at the intersection of visual craft and product thinking. I'm currently a Visual Designer at Huge, partnering with Google on the Google Ads for Search design system, where I build frameworks that help design teams deliver faster and more consistently.
 
-  - Main designer end to end, from discovery workshops to delivery, for
-  Universidad EAFIT and EPM at SoftwareONE.
+  Over the past 7+ years, I've designed B2C experiences and apps for Google, Android, Google for Education, the 2024 Olympic Games, and Rockwell Automation, including web experiences that reach more than 15 million visits a month.
 
-  - Experience across US and LATAM corporates and global agencies, working with
-  cross-disciplinary teams and grounding decisions in user needs.
+  Along the way, I've led projects end to end as the main designer, from discovery workshops with stakeholders to final delivery, for Universidad EAFIT and for EPM at SoftwareONE. Working across US and LATAM corporates and global design agencies has taught me to adapt quickly, collaborate across disciplines, and ground every decision in clear design rationale tied to user needs.
 
-  - Turning abstract ideas into polished deliverables, while exploring how AI
-  expands what designers can do.
-heroDescription: >-
-  I'm a visual designer with a strong UX/UI foundation, working at the
-  intersection of visual craft and product thinking. I'm currently a Visual
-  Designer at Huge, partnering with Google on the Google Ads for Search design
-  system, where I build frameworks that help design teams deliver faster and
-  more consistently.
-
-
-  Over the past 7+ years, I've designed B2C experiences and apps for Google,
-  Android, Google for Education, the 2024 Olympic Games, and Rockwell
-  Automation, including web experiences that reach more than 15 million visits a
-  month.
-
-
-  Along the way, I've led projects end to end as the main designer, from
-  discovery workshops with stakeholders to final delivery, for Universidad EAFIT
-  and for EPM at SoftwareONE. Working across US and LATAM corporates and global
-  design agencies has taught me to adapt quickly, collaborate across
-  disciplines, and ground every decision in clear design rationale tied to user
-  needs.
-
-
-  My superpower is turning abstract ideas into tangible, polished deliverables,
-  while constantly exploring how AI can expand what designers can do. My guiding
-  principle: tools change, but the right approach doesn't. Great design comes
-  from how you frame the problem, not from which tool or model you use.
+  My superpower is turning abstract ideas into tangible, polished deliverables, while constantly exploring how AI can expand what designers can do. My guiding principle: tools change, but the right approach doesn't. Great design comes from how you frame the problem, not from which tool or model you use.
 heroSummaryToggleLabel: 🥱 TL; DR
 highlights: []
 portrait:
@@ -75,4 +45,54 @@ experience:
   - role: UX/UI & Brand Design
     company: Freelance
     logo: {}
+galleryWord: Gallery
+galleryImages:
+  - src: /images/home/galleryImages/0/src.png
+    alt: OLI, the Paris 2024 Olympics viewing guide, answering “When is the next US basketball game?” with game cards on a phone.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/1/src.png
+    alt: Chromebook page headlined “Google Play Store apps at your fingertips”, with a grid of popular app icons.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/2/src.png
+    alt: Website hero with two young women in caps and dark jackets photographed against a clear blue sky.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/3/src.png
+    alt: Collage of three Indigenous portraits on green, orange and blue backgrounds, with icon pills and sparkles.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/4/src.png
+    alt: Spanish-language cards for Ayahuasca retreats, a forest school and a “university for life”, set over warm photos.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/5/src.png
+    alt: CASLA logo — California Apparel Services LA — in black and grey.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/6/src.png
+    alt: OLI assistant panel beside the NBC Paris 2024 site on a laptop, featuring live swimming and athletics coverage.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/7/src.png
+    alt: Three smiling people in pill-shaped frames, each using a smartphone.
+    caption: ''
+    width: 1332
+    height: 1329
+  - src: /images/home/galleryImages/8/src.png
+    alt: MAIA banner reading “Start now!” with a young woman holding a phone, on a dark navy background.
+    caption: ''
+    width: 1332
+    height: 1329
+galleryCursorLabel: Drag
+galleryPrevLabel: Previous photo
+galleryNextLabel: Next photo
 workHeading: Shipped Work
