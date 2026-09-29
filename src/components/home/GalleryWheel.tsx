@@ -7,7 +7,10 @@ import { gsap, ScrollTrigger, useGSAP } from '@/lib/gsap'
 import type { ImageValue } from '@/lib/media'
 
 /* Tuning, matched to the reference wheel. */
-const INACTIVE_SCALE = 0.68
+/* The side photos keep the reference's size, min(17rem, 66vw) at 0.68 scale,
+   while the front photo is shown larger (`--card` below) for detail. */
+const SIDE_BASE = { rem: 17, vw: 0.66 }
+const SIDE_SCALE = 0.68
 const MOVE = { duration: 0.75, ease: 'power3.out' }
 const DIAL_STEP = 30 // degrees the dial's marks turn per photo
 const RING_FACTOR = 0.4 // the background ring turns slower than the photos
@@ -59,6 +62,7 @@ export function GalleryWheel({
 
       let current = Math.floor(count / 2)
       let radius = 0
+      let inactive = SIDE_SCALE // scale of the side photos relative to the front one
       let step = 0 // degrees between neighbouring photos
       let ringRotation = 0
       let marksRotation = 0
@@ -75,10 +79,15 @@ export function GalleryWheel({
       const measure = () => {
         const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
         const gap = (parseFloat(getComputedStyle(view).getPropertyValue('--card-gap')) || 6) * rem
-        const size = cards[0].offsetWidth
+        // Frames follow each photo's shape inside a --card square, so the
+        // longer side of any frame is the full square size.
+        const size = Math.max(cards[0].offsetWidth, cards[0].offsetHeight)
+        const base = Math.min(SIDE_BASE.rem * rem, SIDE_BASE.vw * window.innerWidth)
         const half = (WHEEL_DIAMETER_REM / 2) * rem
-        radius = half - INACTIVE_SCALE * (size / 2)
-        step = ((size + gap) / half) * (180 / Math.PI)
+        inactive = (SIDE_SCALE * base) / size
+        radius = half - SIDE_SCALE * (base / 2)
+        // Spacing follows the side photos, so they sit where they always did.
+        step = ((base + gap) / half) * (180 / Math.PI)
         // Circle centre sits so the front photo's top lines up with the padding.
         const padding = 2 * rem
         gsap.set(track, { top: padding + size + radius })
@@ -93,7 +102,7 @@ export function GalleryWheel({
       const highlight = (tween: boolean) => {
         cards.forEach((card, index) => {
           const isFront = index === current
-          const vars = { scale: isFront ? 1 : INACTIVE_SCALE }
+          const vars = { scale: isFront ? 1 : inactive }
           const filter = { filter: isFront ? 'saturate(1)' : 'saturate(0)' }
           if (tween) {
             gsap.to(card, { ...vars, ...move, overwrite: 'auto' })
@@ -169,7 +178,7 @@ export function GalleryWheel({
           intro = null
           layout(INTRO.spread)
           cards.forEach((card, index) => {
-            gsap.set(card, { scale: INACTIVE_SCALE })
+            gsap.set(card, { scale: inactive })
             if (images[index]) gsap.set(images[index], { filter: 'saturate(0)' })
             card.removeAttribute('data-front')
           })
@@ -288,7 +297,7 @@ export function GalleryWheel({
     <div ref={scope} className="relative flex flex-col items-center gap-8">
       <div
         ref={viewport}
-        className="relative h-[34rem] w-full cursor-grab touch-pan-y overflow-hidden select-none active:cursor-grabbing max-[480px]:h-[29rem] [--card-gap:10] [--card:min(17rem,66vw)] max-lg:[--card-gap:4] max-[480px]:[--card-gap:0.5]"
+        className="relative h-[calc(var(--card)+17rem)] w-full cursor-grab touch-pan-y overflow-hidden select-none active:cursor-grabbing max-[480px]:h-[calc(var(--card)+13rem)] [--card-gap:10] [--card:min(34rem,86vw)] max-lg:[--card-gap:4] max-[480px]:[--card-gap:0.5]"
       >
         <div data-track className="invisible absolute left-1/2 size-0">
           {/* Faint ring and spokes that turn with the wheel. */}
@@ -319,9 +328,11 @@ export function GalleryWheel({
             <div
               key={photo.src + index}
               data-card
-              className="absolute top-0 left-0 h-(--card) w-(--card) overflow-hidden rounded-2xl bg-(--color-bg-subtle) [&_img]:pointer-events-none [&_img]:[-webkit-user-drag:none]"
+              // Keeps the photo's own aspect ratio, fitted inside the square, so nothing is cropped.
+              style={{ aspectRatio: ratio(photo), width: `min(var(--card), var(--card) * ${ratio(photo)})` }}
+              className="absolute top-0 left-0 overflow-hidden rounded-2xl bg-(--color-bg-subtle) [&_img]:pointer-events-none [&_img]:[-webkit-user-drag:none]"
             >
-              <ContentImage value={photo} sizes="(max-width: 480px) 66vw, 272px" className="size-full object-cover" />
+              <ContentImage value={photo} sizes="(max-width: 480px) 86vw, 544px" className="size-full object-cover" />
             </div>
           ))}
         </div>
@@ -405,6 +416,9 @@ function Chevrons({ flip = false }: { flip?: boolean }) {
     </svg>
   )
 }
+
+/** Width ÷ height from the CMS, falling back to square when unknown. */
+const ratio = (photo: Photo) => (photo.width && photo.height ? round(photo.width / photo.height) : 1)
 
 /** Trims float noise so server and client render identical SVG coordinates. */
 const round = (n: number) => Math.round(n * 1000) / 1000
