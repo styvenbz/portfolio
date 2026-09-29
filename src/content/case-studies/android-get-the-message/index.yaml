@@ -1,22 +1,12 @@
 title: Android – Get the Message campaign
 client: Android / Google
 year: '2023'
-summary: >-
-  Leading the UX and UI of the campaign site that helped push universal
-  messaging between Android and iPhone through the RCS standard.
-subtitle: >-
-  Turning a complex technical issue into a human, emotional and visually
-  engaging story
-intro: >-
-  Get The Message is an initiative by Android/Google designed to highlight the
-  limitations of cross-platform messaging between Android and iPhone and to
-  advocate for the adoption of the RCS (Rich Communication Services) standard.
+summary: Leading the UX and UI of the campaign site that helped push universal messaging between Android and iPhone through the RCS standard.
+subtitle: Turning a complex technical issue into a human, emotional and visually engaging story
+intro: |-
+  Get The Message is an initiative by Android/Google designed to highlight the limitations of cross-platform messaging between Android and iPhone and to advocate for the adoption of the RCS (Rich Communication Services) standard.
 
-
-  In this redesigned version, my role focused on leading the user experience and
-  interface design of the main campaign site — translating a complex technical
-  issue into a human, emotional, and visually engaging story that connects with
-  users while aligning with Android’s brand system.
+  In this redesigned version, my role focused on leading the user experience and interface design of the main campaign site — translating a complex technical issue into a human, emotional, and visually engaging story that connects with users while aligning with Android’s brand system.
 keyPoints:
   - label: Awards
     body: |-
@@ -36,12 +26,10 @@ facts:
 featured: true
 order: 1
 thumbnail:
-  src: /images/case-studies/android-get-the-message/thumbnail/src.avif
-  alt: >-
-    Get the Message campaign site on desktop and mobile, with the headline “It’s
-    time for Apple to fix texting” beside a photo of two friends.
-  width: 4296
-  height: 2417
+  src: /images/case-studies/android-get-the-message/thumbnail/src.webp
+  alt: Get the Message campaign site on desktop and mobile, with the headline “It’s time for Apple to fix texting” beside a photo of two friends.
+  width: 2400
+  height: 1350
 thumbnailVideo:
   src: /images/case-studies/android-get-the-message/thumbnailVideo/src.mp4
   autoplay: true
@@ -64,28 +52,17 @@ body:
       theme: light
       title: Humanizing a
       titleMuted: technical story
-      body: >-
-        The main challenge was turning a complex, technical issue, how Android
-        and iPhone users communicate, into a story that felt human and easy to
-        grasp.
+      body: |-
+        The main challenge was turning a complex, technical issue, how Android and iPhone users communicate, into a story that felt human and easy to grasp.
 
-
-        The goal was to create a clear narrative that moved naturally from
-        problem to solution, using strong visual design and relatable imagery to
-        connect emotionally with users. Every element, from color and layout to
-        visual design, was crafted to balance clarity and emotion while bringing
-        Android’s personality to life in a fresh, modern way.
+        The goal was to create a clear narrative that moved naturally from problem to solution, using strong visual design and relatable imagery to connect emotionally with users. Every element, from color and layout to visual design, was crafted to balance clarity and emotion while bringing Android’s personality to life in a fresh, modern way.
       media:
         discriminant: image
         value:
-          src: >-
-            /images/case-studies/android-get-the-message/body/0/value/media/value/src.avif
-          alt: >-
-            Get the Message campaign site on desktop and mobile, with the
-            headline “It’s time for Apple to fix texting” beside a photo of two
-            friends.
-          width: 4296
-          height: 2417
+          src: /images/case-studies/android-get-the-message/body/0/value/media/value/src.webp
+          alt: Get the Message campaign site on desktop and mobile, with the headline “It’s time for Apple to fix texting” beside a photo of two friends.
+          width: 2400
+          height: 1350
       width: contained
   - discriminant: imageGrid
     value:
@@ -93,20 +70,14 @@ body:
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/android-get-the-message/body/1/value/images/0/src.avif
-          alt: >-
-            Eight mobile screens from the campaign showing message threads and
-            articles about texting between Android and iPhone.
-          width: 4296
-          height: 2417
-        - src: >-
-            /images/case-studies/android-get-the-message/body/1/value/images/1/src.avif
-          alt: >-
-            Campaign landing page on desktop and mobile headlined “What iPhone
-            users experience right now”, with photos of people texting.
-          width: 4296
-          height: 2417
+        - src: /images/case-studies/android-get-the-message/body/1/value/images/0/src.webp
+          alt: Eight mobile screens from the campaign showing message threads and articles about texting between Android and iPhone.
+          width: 2400
+          height: 1350
+        - src: /images/case-studies/android-get-the-message/body/1/value/images/1/src.webp
+          alt: Campaign landing page on desktop and mobile headlined “What iPhone users experience right now”, with photos of people texting.
+          width: 2400
+          height: 1350
   - discriminant: list
     value:
       theme: light
@@ -114,14 +85,10 @@ body:
       items:
         - marker: 1B+
           heading: RCS messages sent daily in the U.S.
-          body: >-
-            Google reported over 1 billion RCS messages sent daily in the U.S.,
-            with the campaign playing a key role in driving adoption.
+          body: Google reported over 1 billion RCS messages sent daily in the U.S., with the campaign playing a key role in driving adoption.
         - marker: iOS 18
           heading: Apple announced RCS support
-          body: >-
-            Apple’s announcement of RCS support for iOS 18 (2024) marked a major
-            win for universal messaging.
+          body: Apple’s announcement of RCS support for iOS 18 (2024) marked a major win for universal messaging.
   - discriminant: list
     value:
       theme: dark
@@ -139,18 +106,7 @@ body:
       theme: light
       title: Feedback
       titleMuted: from the client
-      body: >-
-        “Wanted to shout out the ANDROID team, specifically the folks that have
-        been working on the campaign-related work that saw us push into new
-        process, new ways of working, rapid turn around and an endlessly
-        flexible approach to delivering value to the client on the timeline they
-        gave us. With the recent announcement that Apple will be supporting RCS
-        messaging protocol next year - it seems they GOT THE MESSAGE (in small
-        part to us, also European regulators). This team really rallied. Now
-        we’re pivoting (again) to deliver a softened launch without
-        harder-hitting messaging. MISSION ACCOMPLISHED. Such an exciting and
-        incredible milestone! Kudos to the countless Hugers here who were part
-        of this journey!”
+      body: “Wanted to shout out the ANDROID team, specifically the folks that have been working on the campaign-related work that saw us push into new process, new ways of working, rapid turn around and an endlessly flexible approach to delivering value to the client on the timeline they gave us. With the recent announcement that Apple will be supporting RCS messaging protocol next year - it seems they GOT THE MESSAGE (in small part to us, also European regulators). This team really rallied. Now we’re pivoting (again) to deliver a softened launch without harder-hitting messaging. MISSION ACCOMPLISHED. Such an exciting and incredible milestone! Kudos to the countless Hugers here who were part of this journey!”
       media:
         discriminant: none
       width: contained

@@ -34,7 +34,7 @@ export function contentImage({
       src: fields.image({
         label: 'Image file',
         description:
-          'JPG, PNG, WebP, AVIF or SVG — ideally under 1 MB and no wider than 2400px. It is saved into the site’s repository.',
+          'JPG, PNG or WebP — ideally under 1 MB and no wider than 2400px. Avoid AVIF and SVG for photos: the site can’t resize them, so phones download the full file. It is saved into the site’s repository.',
         ...storage(area),
       }),
       alt: fields.text({

@@ -48,6 +48,20 @@ export async function SiteHeader() {
           </ul>
         </nav>
       </div>
+
+      {/* The avatar's speech bubble; the link's own label already names it,
+          so screen readers skip this. */}
+      {logo?.src && settings?.logoTooltip ? (
+        <div
+          aria-hidden
+          className="nav-bubble pointer-events-none absolute top-full left-3 mt-3 sm:left-4"
+        >
+          <span className="glass absolute -top-1.5 left-4 size-3 rotate-45 rounded-[3px] [clip-path:polygon(0_0,100%_0,0_100%)] sm:left-5" />
+          <span className="glass text-(--color-ink) block rounded-2xl px-4 py-2.5 text-sm leading-none whitespace-nowrap">
+            {settings.logoTooltip}
+          </span>
+        </div>
+      ) : null}
     </HeaderShell>
   )
 }

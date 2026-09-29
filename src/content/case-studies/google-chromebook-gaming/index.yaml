@@ -2,9 +2,7 @@ featured: true
 status: ''
 thumbnail:
   src: /images/case-studies/google-chromebook-gaming/thumbnail/src.jpg
-  alt: >-
-    Frame from the Chromebook gaming hero video featuring Master Chief from Halo
-    Infinite and the Xbox logo.
+  alt: Frame from the Chromebook gaming hero video featuring Master Chief from Halo Infinite and the Xbox logo.
   caption: ''
   width: 1280
   height: 720
@@ -28,15 +26,9 @@ title: Google Chromebook – Gaming
 client: Google Chromebook
 year: '2022'
 order: 4
-summary: >-
-  The new era of Chromebook gaming: a landing experience that shows ChromeOS can
-  deliver high-quality gaming.
+summary: 'The new era of Chromebook gaming: a landing experience that shows ChromeOS can deliver high-quality gaming.'
 subtitle: Designing the future of cloud gaming
-intro: >-
-  Redesigned the Google Chromebook (Google for Gaming) landing experience to
-  better align messaging, visual identity, and user engagement, transforming a
-  technically driven product page into a compelling, human-forward platform that
-  communicates the power and possibilities of Chromebook for gaming.
+intro: Redesigned the Google Chromebook (Google for Gaming) landing experience to better align messaging, visual identity, and user engagement, transforming a technically driven product page into a compelling, human-forward platform that communicates the power and possibilities of Chromebook for gaming.
 keyPoints: []
 facts:
   - label: Role
@@ -55,20 +47,13 @@ body:
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/google-chromebook-gaming/body/0/value/images/0/src.png
-          alt: >-
-            Five mobile screens of the Chromebook gaming site, from “Ultimate
-            cloud gaming machines, disguised as Chromebooks” to laptops and
-            accessories.
+        - src: /images/case-studies/google-chromebook-gaming/body/0/value/images/0/src.png
+          alt: Five mobile screens of the Chromebook gaming site, from “Ultimate cloud gaming machines, disguised as Chromebooks” to laptops and accessories.
           caption: ''
           width: 2400
           height: 1499
-        - src: >-
-            /images/case-studies/google-chromebook-gaming/body/0/value/images/1/src.png
-          alt: >-
-            The Chromebook gaming catalog on a desktop monitor, showing a grid
-            of game cover art.
+        - src: /images/case-studies/google-chromebook-gaming/body/0/value/images/1/src.png
+          alt: The Chromebook gaming catalog on a desktop monitor, showing a grid of game cover art.
           caption: ''
           width: 2311
           height: 1550
@@ -77,51 +62,27 @@ body:
       theme: dark
       title: Breaking the
       titleMuted: Chromebook myth
-      body: >-
-        Chromebook was often seen only as a tool for work or school, not for
-        gaming. The challenge was to change that perception and show that
-        ChromeOS can also deliver high-quality gaming experiences.
+      body: |-
+        Chromebook was often seen only as a tool for work or school, not for gaming. The challenge was to change that perception and show that ChromeOS can also deliver high-quality gaming experiences.
 
+        Starting from a UX structure, the design process included defining the right visual components, layout, color combinations, and imagery. Several visual explorations were created around different concepts, supported by benchmarking and market research to understand how other gaming brands communicate. Accessibility was an important part of the process, ensuring color contrast and component usability met standards.
 
-        Starting from a UX structure, the design process included defining the
-        right visual components, layout, color combinations, and imagery.
-        Several visual explorations were created around different concepts,
-        supported by benchmarking and market research to understand how other
-        gaming brands communicate. Accessibility was an important part of the
-        process, ensuring color contrast and component usability met standards.
+        The final designs were delivered to developers with all assets and documentation prepared for implementation. The proposal was later shared with Google’s internal and external teams to align the creative direction. The project was developed in collaboration with a multidisciplinary team that included UX designers, visual designers, animators, and copywriters.
 
-
-        The final designs were delivered to developers with all assets and
-        documentation prepared for implementation. The proposal was later shared
-        with Google’s internal and external teams to align the creative
-        direction. The project was developed in collaboration with a
-        multidisciplinary team that included UX designers, visual designers,
-        animators, and copywriters.
-
-
-        This setup made it possible to combine different perspectives and
-        skills, creating a more complete and engaging experience. Working
-        closely with such a diverse team helped strengthen collaboration and
-        creative alignment throughout the project.
+        This setup made it possible to combine different perspectives and skills, creating a more complete and engaging experience. Working closely with such a diverse team helped strengthen collaboration and creative alignment throughout the project.
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/google-chromebook-gaming/body/1/value/images/0/src.png
-          alt: >-
-            A desktop monitor showing the Chromebook gaming page with three
-            gaming laptops running The Witcher, Mafia and Control.
+        - src: /images/case-studies/google-chromebook-gaming/body/1/value/images/0/src.png
+          alt: A desktop monitor showing the Chromebook gaming page with three gaming laptops running The Witcher, Mafia and Control.
           caption: ''
           width: 2017
           height: 1480
-        - src: >-
-            /images/case-studies/google-chromebook-gaming/body/1/value/images/1/src.avif
-          alt: >-
-            Full-page designs of the Chromebook gaming site, from the hero to
-            game catalogs and hardware listings.
+        - src: /images/case-studies/google-chromebook-gaming/body/1/value/images/1/src.webp
+          alt: Full-page designs of the Chromebook gaming site, from the hero to game catalogs and hardware listings.
           caption: ''
-          width: 2864
-          height: 1611
+          width: 2400
+          height: 1350
   - discriminant: list
     value:
       theme: light
@@ -131,23 +92,13 @@ body:
       items:
         - marker: ''
           heading: A more aspirational tone
-          body: >-
-            The new design brought a more engaging, aspirational tone — using
-            hero images, visual context (game imagery, devices in use), and
-            cinematic layouts to underscore the gaming potential.
+          body: The new design brought a more engaging, aspirational tone — using hero images, visual context (game imagery, devices in use), and cinematic layouts to underscore the gaming potential.
         - marker: ''
           heading: Brand continuity with gaming flair
-          body: >-
-            Visual continuity with Google’s brand language plus bespoke gaming
-            flair helped elevate the page’s perceived value and relevance to
-            gaming audiences.
+          body: Visual continuity with Google’s brand language plus bespoke gaming flair helped elevate the page’s perceived value and relevance to gaming audiences.
         - marker: ''
           heading: Stronger conversion potential
-          body: >-
-            The redesign contributed to stronger conversion potential by
-            reducing friction in understanding features, improving emotional
-            resonance, and supporting marketing efforts across Google’s
-            ecosystem.
+          body: The redesign contributed to stronger conversion potential by reducing friction in understanding features, improving emotional resonance, and supporting marketing efforts across Google’s ecosystem.
   - discriminant: list
     value:
       theme: dark

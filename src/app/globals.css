@@ -104,6 +104,12 @@
     font-synthesis: none;
   }
 
+  /* Italic is a separate, lazily loaded face (see src/app/fonts.ts). */
+  em,
+  i {
+    font-family: var(--font-neue-montreal-italic), var(--font-sans);
+  }
+
   h1,
   h2,
   h3,
@@ -203,6 +209,43 @@
 [data-motion='subtle'] .enter-up,
 [data-motion='subtle'].nav-in {
   animation: none;
+}
+
+/* Speech bubble under the nav avatar (see SiteHeader). It sits beside the
+   glass pill rather than inside it: nested inside, its own blur could only
+   see the pill, never the page behind. Shown while the avatar is hovered
+   (real pointers only, so a tap doesn't leave it stuck) or keyboard-focused. */
+.nav-bubble {
+  opacity: 0;
+  translate: 0 -0.5rem;
+  scale: 0.9;
+  filter: blur(6px);
+  transform-origin: 1.5rem 0;
+  transition:
+    opacity 0.3s var(--ease-out-quart),
+    translate 0.45s var(--ease-out-expo),
+    scale 0.45s var(--ease-out-expo),
+    filter 0.3s var(--ease-out-quart);
+}
+
+@media (hover: hover) {
+  header:has([data-nav-logo]:hover) .nav-bubble {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+header:has([data-nav-logo]:focus-visible) .nav-bubble {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  filter: blur(0);
+}
+
+[data-motion='subtle'] .nav-bubble {
+  transition: opacity 0.2s linear;
 }
 
 /* ---------------------------------------------------------------

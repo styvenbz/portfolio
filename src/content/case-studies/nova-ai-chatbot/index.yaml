@@ -63,7 +63,7 @@ heroMedia:
       explanation of what it does.
     width: 600
     height: 338
-access: protected
+access: public
 body:
   - discriminant: imageGrid
     value:

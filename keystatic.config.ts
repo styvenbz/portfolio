@@ -482,6 +482,11 @@ export default config({
             itemLabel: (props) => props.fields.alt.value || 'Expression',
           }
         ),
+        logoTooltip: fields.text({
+          label: 'Nav logo — speech bubble',
+          description:
+            'Short line in a bubble that pops out under the avatar when someone hovers it, e.g. "Go back to home". Desktop only. Leave empty for no bubble.',
+        }),
         navLinks: fields.array(
           fields.object({
             label: fields.text({ label: 'Label' }),
@@ -600,6 +605,12 @@ export default config({
           multiline: true,
         }),
         defaultOgImage: contentImage({ area: 'seo', label: 'Default social share image' }),
+        favicon: contentImage({
+          area: 'seo',
+          label: 'Favicon',
+          description:
+            'The little icon in the browser tab and on phone home screens. A square PNG with a transparent background, at least 512×512px. Alt text isn’t used.',
+        }),
       },
     }),
   },

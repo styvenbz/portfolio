@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getSeoDefaults } from '@/lib/content'
 import { hasImage } from '@/lib/media'
-import { neueMontreal } from './fonts'
+import { neueMontreal, neueMontrealItalic } from './fonts'
 import './globals.css'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,6 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
       template: seo?.titleTemplate ?? '%s',
     },
     description: seo?.defaultDescription ?? undefined,
+    icons: hasImage(seo?.favicon)
+      ? { icon: seo.favicon.src, apple: seo.favicon.src }
+      : undefined,
     openGraph: {
       type: 'website',
       title: seo?.defaultTitle ?? undefined,
@@ -31,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={neueMontreal.variable}>
+    <html lang="en" className={`${neueMontreal.variable} ${neueMontrealItalic.variable}`}>
       <body>{children}</body>
     </html>
   )

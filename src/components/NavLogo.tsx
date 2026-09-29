@@ -65,6 +65,8 @@ export function NavLogo({
     <Link
       href="/"
       aria-label={label}
+      // Hook for the speech bubble in SiteHeader.
+      data-nav-logo=""
       onPointerEnter={start}
       onPointerLeave={stop}
       onFocus={start}

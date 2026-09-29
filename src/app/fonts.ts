@@ -14,10 +14,22 @@ import localFont from 'next/font/local'
 export const neueMontreal = localFont({
   src: [
     { path: './fonts/PPNeueMontreal-Book.woff2', weight: '400', style: 'normal' },
-    { path: './fonts/PPNeueMontreal-Italic.woff2', weight: '400', style: 'italic' },
     { path: './fonts/PPNeueMontreal-Medium.woff2', weight: '500', style: 'normal' },
   ],
   variable: '--font-neue-montreal',
   display: 'swap',
+  fallback: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+})
+
+/**
+ * Italic only appears inside case-study prose, so it isn't preloaded: the
+ * browser fetches it the first time an <em> actually renders, instead of every
+ * page paying ~50KB up front.
+ */
+export const neueMontrealItalic = localFont({
+  src: [{ path: './fonts/PPNeueMontreal-Italic.woff2', weight: '400', style: 'italic' }],
+  variable: '--font-neue-montreal-italic',
+  display: 'swap',
+  preload: false,
   fallback: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
 })

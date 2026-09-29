@@ -16,6 +16,7 @@ logoHoverFrames:
   - src: /images/site/logoHoverFrames/2/src.webp
     width: 278
     height: 347
+logoTooltip: Go back to home
 navLinks:
   - label: Work
     href: /work

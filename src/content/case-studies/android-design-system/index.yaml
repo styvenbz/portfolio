@@ -1,7 +1,7 @@
 featured: true
 status: Webby Award 2024
 thumbnail:
-  src: /images/case-studies/android-design-system/thumbnail/src.avif
+  src: /images/case-studies/android-design-system/thumbnail/src.webp
   alt: A woman dancing joyfully beside the headline “Android lets you do you.”
   caption: ''
   width: 1296
@@ -9,7 +9,7 @@ thumbnail:
 heroMedia:
   discriminant: image
   value:
-    src: /images/case-studies/android-design-system/heroMedia/value/src.avif
+    src: /images/case-studies/android-design-system/heroMedia/value/src.webp
     alt: A woman dancing joyfully beside the headline “Android lets you do you.”
     caption: ''
     width: 1296
@@ -24,11 +24,7 @@ year: '2023'
 order: 3
 summary: Establishing the visual foundations for the Android ecosystem.
 subtitle: Creating the visual foundation for Android’s web presence
-intro: >-
-  The Android.com redesign introduced a new approach to how users explore
-  Android products and features. Along with the visual update, a design system
-  was created to unify style, structure, and interaction across the platform,
-  improving consistency and collaboration between teams.
+intro: The Android.com redesign introduced a new approach to how users explore Android products and features. Along with the visual update, a design system was created to unify style, structure, and interaction across the platform, improving consistency and collaboration between teams.
 keyPoints:
   - label: Awards
     body: |-
@@ -53,53 +49,35 @@ body:
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/android-design-system/body/0/value/images/0/src.avif
-          alt: >-
-            Design system documentation for Android.com buttons and color
-            gradients, with component states laid out in tables.
+        - src: /images/case-studies/android-design-system/body/0/value/images/0/src.webp
+          alt: Design system documentation for Android.com buttons and color gradients, with component states laid out in tables.
           caption: ''
-          width: 4296
-          height: 2417
-        - src: >-
-            /images/case-studies/android-design-system/body/0/value/images/1/src.avif
-          alt: >-
-            Design system specs for navigation menus, dropdowns and footers,
-            annotated with red measurement labels.
+          width: 2400
+          height: 1350
+        - src: /images/case-studies/android-design-system/body/0/value/images/1/src.webp
+          alt: Design system specs for navigation menus, dropdowns and footers, annotated with red measurement labels.
           caption: ''
-          width: 4296
-          height: 2417
+          width: 2400
+          height: 1350
   - discriminant: imageGrid
     value:
       theme: light
       title: Defining the
       titleMuted: core system
-      body: >-
-        The main challenge was to build a design system from the ground up. The
-        team defined the foundations — color, typography, grid, spacing, and
-        elevation — and later expanded into navigation, footers, buttons, icons,
-        and pagination. Each element was documented with clear specifications,
-        accessibility standards, and real use cases, creating a single source of
-        truth for Android teams.
+      body: The main challenge was to build a design system from the ground up. The team defined the foundations — color, typography, grid, spacing, and elevation — and later expanded into navigation, footers, buttons, icons, and pagination. Each element was documented with clear specifications, accessibility standards, and real use cases, creating a single source of truth for Android teams.
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/android-design-system/body/1/value/images/0/src.avif
-          alt: >-
-            Color foundations page with primary, brand and neutral swatches and
-            secondary color palettes.
+        - src: /images/case-studies/android-design-system/body/1/value/images/0/src.webp
+          alt: Color foundations page with primary, brand and neutral swatches and secondary color palettes.
           caption: ''
-          width: 4296
-          height: 2417
-        - src: >-
-            /images/case-studies/android-design-system/body/1/value/images/1/src.avif
-          alt: >-
-            Card component documentation showing image and text variants across
-            layouts and themes.
+          width: 2400
+          height: 1350
+        - src: /images/case-studies/android-design-system/body/1/value/images/1/src.webp
+          alt: Card component documentation showing image and text variants across layouts and themes.
           caption: ''
-          width: 4296
-          height: 2417
+          width: 2400
+          height: 1350
   - discriminant: list
     value:
       theme: dark

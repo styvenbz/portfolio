@@ -1,15 +1,9 @@
 title: Google for Education – Leader & Admin Community
 client: Google for Education
 year: '2024'
-summary: >-
-  Redesigning two community hubs to turn institutional, technical content into
-  inviting, human-centered platforms for educators.
+summary: Redesigning two community hubs to turn institutional, technical content into inviting, human-centered platforms for educators.
 subtitle: Designing communities that inspire educators
-intro: >-
-  Redesigned two community-hub pages for Google for Education, the Education
-  Leader Group and ELP Admin Community, to turn institutional, technical content
-  into inviting, human-centered platforms that clearly communicate value and
-  encourage participation.
+intro: Redesigned two community-hub pages for Google for Education, the Education Leader Group and ELP Admin Community, to turn institutional, technical content into inviting, human-centered platforms that clearly communicate value and encourage participation.
 keyPoints: []
 liveUrl: https://edu.google.com/for-educators/communities/community-admin-group/
 facts:
@@ -25,11 +19,9 @@ featured: true
 order: 2
 thumbnail:
   src: /images/case-studies/google-for-education-community/thumbnail/src.jpg
-  alt: >-
-    Portraits of three educators connected in a circle around the Google for
-    Education admin icon, with the Google logo below.
-  width: 3840
-  height: 2160
+  alt: Portraits of three educators connected in a circle around the Google for Education admin icon, with the Google logo below.
+  width: 2400
+  height: 1350
 thumbnailVideo:
   autoplay: true
   loop: true
@@ -38,13 +30,10 @@ thumbnailVideo:
 heroMedia:
   discriminant: image
   value:
-    src: >-
-      /images/case-studies/google-for-education-community/heroMedia/value/src.jpg
-    alt: >-
-      Portraits of three educators connected in a circle around the Google for
-      Education admin icon, with the Google logo below.
-    width: 3840
-    height: 2160
+    src: /images/case-studies/google-for-education-community/heroMedia/value/src.jpg
+    alt: Portraits of three educators connected in a circle around the Google for Education admin icon, with the Google logo below.
+    width: 2400
+    height: 1350
 access: public
 body:
   - discriminant: imageGrid
@@ -53,73 +42,45 @@ body:
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/google-for-education-community/body/0/value/images/0/src.avif
-          alt: >-
-            Google Education Admin Group landing page on desktop and mobile,
-            headlined “Join the Google Education Admin Group (GEAG)”.
-          width: 4296
-          height: 2417
-        - src: >-
-            /images/case-studies/google-for-education-community/body/0/value/images/1/src.avif
-          alt: >-
-            Education Leader Group page on desktop and mobile, headlined “The
-            GELG empowers education leaders to overcome critical challenges”.
-          width: 4296
-          height: 2417
+        - src: /images/case-studies/google-for-education-community/body/0/value/images/0/src.webp
+          alt: Google Education Admin Group landing page on desktop and mobile, headlined “Join the Google Education Admin Group (GEAG)”.
+          width: 2400
+          height: 1350
+        - src: /images/case-studies/google-for-education-community/body/0/value/images/1/src.webp
+          alt: Education Leader Group page on desktop and mobile, headlined “The GELG empowers education leaders to overcome critical challenges”.
+          width: 2400
+          height: 1350
   - discriminant: imageGrid
     value:
       theme: light
       title: Bringing humanity
       titleMuted: to the system
-      body: >-
-        These pages had to transform dense, role-driven institutional offerings
-        (for educational leaders and technology admins) into approachable
-        digital experiences. The core problem: stakeholders often saw these
-        communities as abstract or bureaucratic.
+      body: |-
+        These pages had to transform dense, role-driven institutional offerings (for educational leaders and technology admins) into approachable digital experiences. The core problem: stakeholders often saw these communities as abstract or bureaucratic.
 
-
-        My goal was to humanize them through visual storytelling and imagery,
-        clarifying what value members would gain and how to engage.
+        My goal was to humanize them through visual storytelling and imagery, clarifying what value members would gain and how to engage.
       columns: '2'
       wideLast: false
       images:
-        - src: >-
-            /images/case-studies/google-for-education-community/body/1/value/images/0/src.avif
-          alt: >-
-            Four testimonial cards with circular portraits of education leaders
-            and their quotes.
-          width: 4296
-          height: 2417
-        - src: >-
-            /images/case-studies/google-for-education-community/body/1/value/images/1/src.avif
-          alt: >-
-            Five full-length page designs for the Google for Education community
-            hubs, side by side.
-          width: 4296
-          height: 2417
+        - src: /images/case-studies/google-for-education-community/body/1/value/images/0/src.webp
+          alt: Four testimonial cards with circular portraits of education leaders and their quotes.
+          width: 2400
+          height: 1350
+        - src: /images/case-studies/google-for-education-community/body/1/value/images/1/src.webp
+          alt: Five full-length page designs for the Google for Education community hubs, side by side.
+          width: 2400
+          height: 1350
   - discriminant: list
     value:
       theme: dark
       title: Outcomes
-      body: >-
-        The redesign brought greater clarity, warmth, and cohesion to Google’s
-        educator community experience, helping users quickly understand the
-        value of joining while strengthening the visual identity across the
-        platform.
+      body: The redesign brought greater clarity, warmth, and cohesion to Google’s educator community experience, helping users quickly understand the value of joining while strengthening the visual identity across the platform.
       items:
         - marker: 11.9M
           heading: Average visits per month
-          body: >-
-            Both pages now form part of a unified ecosystem that attracts an
-            average of 11.9 million visits per month (Similarweb, 2024–2025),
-            reinforcing Google for Education’s role as a trusted global hub for
-            learning and collaboration.
+          body: Both pages now form part of a unified ecosystem that attracts an average of 11.9 million visits per month (Similarweb, 2024–2025), reinforcing Google for Education’s role as a trusted global hub for learning and collaboration.
         - heading: A more human experience
-          body: >-
-            The new visual direction improved readability, consistency, and
-            emotional resonance, creating a more engaging and human experience
-            for educators worldwide.
+          body: The new visual direction improved readability, consistency, and emotional resonance, creating a more engaging and human experience for educators worldwide.
   - discriminant: list
     value:
       theme: light
@@ -137,21 +98,8 @@ body:
       theme: dark
       title: Feedback
       titleMuted: from the team
-      body: >-
-        “I wanted to take a moment to express my infinite gratitude and congrats
-        Styven for his great work during the project. Styven is one of the best
-        partners I’ve had the chance to work with. Every day, he motivated me to
-        deliver our best work. His attention to detail is just as sharp as his
-        creative skills. With each project iteration, the quality of our work
-        improved significantly thanks to his strong management. Styven is also
-        incredibly kind and always open to advice, creating an environment where
-        we could both grow together. One of his standout strengths is his
-        ability to incorporate client feedback effectively. He organizes it in a
-        way that the team can easily navigate, which made my work as a partner
-        smoother and more efficient. His approachability, combined with his
-        talent for managing feedback, made a noticeable difference in our
-        results.”
-
+      body: |-
+        “I wanted to take a moment to express my infinite gratitude and congrats Styven for his great work during the project. Styven is one of the best partners I’ve had the chance to work with. Every day, he motivated me to deliver our best work. His attention to detail is just as sharp as his creative skills. With each project iteration, the quality of our work improved significantly thanks to his strong management. Styven is also incredibly kind and always open to advice, creating an environment where we could both grow together. One of his standout strengths is his ability to incorporate client feedback effectively. He organizes it in a way that the team can easily navigate, which made my work as a partner smoother and more efficient. His approachability, combined with his talent for managing feedback, made a noticeable difference in our results.”
 
         — Associate Visual Designer at Huge, Google for Education
       media:

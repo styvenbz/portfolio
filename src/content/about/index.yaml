@@ -1,50 +1,31 @@
 heading: Design. Learn. Teach.
-subtitle: >-
-  I create digital experiences that feel thoughtful and human, always learning
-  and sharing as I grow.
+subtitle: I create digital experiences that feel thoughtful and human, always learning and sharing as I grow.
 portrait:
-  src: /images/about/portrait/src.avif
-  alt: >-
-    Styven giving a design talk to a room of students in front of a projected
-    slide.
+  src: /images/about/portrait/src.webp
+  alt: Styven giving a design talk to a room of students in front of a projected slide.
   width: 2198
   height: 1238
 gallery:
   - src: /images/about/gallery/0/src.webp
-    alt: >-
-      Styven speaking into a microphone at a panel discussion, wearing glasses
-      and a striped shirt.
+    alt: Styven speaking into a microphone at a panel discussion, wearing glasses and a striped shirt.
     caption: ''
     width: 1050
     height: 1050
   - src: /images/about/gallery/1/src.webp
-    alt: >-
-      Styven on stage at a conference, holding a microphone and wearing an event
-      lanyard.
+    alt: Styven on stage at a conference, holding a microphone and wearing an event lanyard.
     caption: ''
     width: 1050
     height: 1050
 experienceHeading: Design across industries and markets
 skillsHeading: What I do
-bio: >
+bio: |
   **Design, community, and continuous learning**
 
+  I’ve always been drawn to both technology and creativity. I studied visual arts and entered the tech world through a bootcamp, which led me to my first role as a UX/UI designer at SoftwareOne. Later, I expanded into the international market, working as a Senior UI Interface Designer at Rockwell Automation and now at Huge, where I’ve had the opportunity to collaborate with Google for almost five years.
 
-  I’ve always been drawn to both technology and creativity. I studied visual
-  arts and entered the tech world through a bootcamp, which led me to my first
-  role as a UX/UI designer at SoftwareOne. Later, I expanded into the
-  international market, working as a Senior UI Interface Designer at Rockwell
-  Automation and now at Huge, where I’ve had the opportunity to collaborate with
-  Google for almost five years.
+  Along the way, I’ve given talks on design, contributed to local tech communities, and volunteered to inspire new talent to explore the world of technology.
 
-
-  Along the way, I’ve given talks on design, contributed to local tech
-  communities, and volunteered to inspire new talent to explore the world of
-  technology.
-
-
-  More than 6 years of experience working for brands, crafting digital products,
-  and interactive experiences.
+  More than 6 years of experience working for brands, crafting digital products, and interactive experiences.
 experience:
   - company: Huge
     role: Visual & UI designer, working for Google
