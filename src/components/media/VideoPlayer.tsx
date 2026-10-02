@@ -12,28 +12,58 @@ export type PlayerLabels = { play: string; pause: string; soundOn: string; sound
  * button only appears when "Muted" is unticked in the CMS. The play state
  * follows the element's own events, so it stays right if the browser blocks
  * autoplay or the video ends.
+ *
+ * Unless `eager`, nothing downloads until the video nears the screen, and it
+ * pauses while scrolled away — so a long clip at the bottom of a page doesn't
+ * compete with the images at the top for a slow connection.
  */
 export function VideoPlayer({
   value,
   className,
   labels,
+  eager = false,
 }: {
   value: VideoValue & { src: string }
   className?: string
   labels: PlayerLabels
+  eager?: boolean
 }) {
   const video = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
   const [muted, setMuted] = useState(true)
+  const [loaded, setLoaded] = useState(eager)
+  const [sized, setSized] = useState(false)
+  // A pause the visitor chose, as opposed to one from scrolling away.
+  const userPaused = useRef(false)
 
   // Autoplay often starts before hydration, so its first play event is missed.
   useEffect(() => {
     if (video.current) setPlaying(!video.current.paused)
   }, [])
 
+  useEffect(() => {
+    const element = video.current
+    if (!element) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoaded(true)
+          if (value.autoplay && !userPaused.current) element.play().catch(() => {})
+        } else if (!element.paused) {
+          element.pause()
+        }
+      },
+      { rootMargin: '200px 0px' }
+    )
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [value.autoplay])
+
   const togglePlay = () => {
     const element = video.current
     if (!element) return
+    setLoaded(true)
+    userPaused.current = !element.paused
     if (element.paused) element.play().catch(() => {})
     else element.pause()
   }
@@ -44,23 +74,33 @@ export function VideoPlayer({
     const next = !muted
     element.muted = next
     setMuted(next)
-    if (!next && element.paused) element.play().catch(() => {})
+    if (!next && element.paused) {
+      userPaused.current = false
+      setLoaded(true)
+      element.play().catch(() => {})
+    }
   }
+
+  // Holds the space before the file arrives, so the page doesn't jump.
+  const ratio = value.width && value.height ? `${value.width} / ${value.height}` : sized ? undefined : '16 / 9'
 
   return (
     <div className="relative size-full">
       <video
         ref={video}
         className={className}
-        src={value.src}
+        src={loaded ? value.src : undefined}
         poster={value.poster ?? undefined}
-        autoPlay={value.autoplay}
+        // Starts itself once the file is attached; later scroll-backs resume it in the observer.
+        autoPlay={value.autoplay && loaded}
         loop={value.loop}
         muted
         playsInline
-        preload="metadata"
+        preload={loaded ? 'metadata' : 'none'}
         width={value.width ?? undefined}
         height={value.height ?? undefined}
+        style={{ aspectRatio: ratio }}
+        onLoadedMetadata={() => setSized(true)}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
       />

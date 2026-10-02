@@ -13,15 +13,18 @@ export function ContentVideo({
   value,
   className,
   player,
+  eager,
 }: {
   value: Partial<VideoValue> | null | undefined
   className?: string
   player?: PlayerLabels
+  /** Load straight away, for a video at the top of the page. */
+  eager?: boolean
 }) {
   if (!hasVideo(value)) return <MediaPlaceholder className={className} />
 
   if (player && !value.controls) {
-    return <VideoPlayer value={value} className={className} labels={player} />
+    return <VideoPlayer value={value} className={className} labels={player} eager={eager} />
   }
 
   // Browsers only permit autoplay when muted.

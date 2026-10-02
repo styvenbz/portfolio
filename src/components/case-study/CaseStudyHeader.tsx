@@ -40,7 +40,7 @@ export function CaseStudyHeader({
                 />
               ) : null}
               {cover.discriminant === 'video' && hasVideo(cover.value) ? (
-                <ContentVideo value={cover.value} className="size-full object-cover" player={playerLabels} />
+                <ContentVideo value={cover.value} className="size-full object-cover" player={playerLabels} eager />
               ) : null}
             </div>
           </div>
