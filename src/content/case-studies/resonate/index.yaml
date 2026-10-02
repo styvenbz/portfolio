@@ -184,6 +184,16 @@ body:
             shape in soft green tones, above the Resonate logo.
           width: 1935
           height: 1088
+        - src: /images/case-studies/resonate/body/3/value/images/4/src.jpg
+          alt: The purple Resonate wordmark over soft concentric rings on a black background.
+          caption: ''
+          width: 1935
+          height: 1088
+        - src: /images/case-studies/resonate/body/3/value/images/5/src.jpg
+          alt: Streaming services floating in an isometric stack — Amazon Music, YouTube Music, Spotify, Apple Music and Deezer — above the Resonate logo.
+          caption: ''
+          width: 1935
+          height: 1088
   - discriminant: textMedia
     value:
       theme: light
