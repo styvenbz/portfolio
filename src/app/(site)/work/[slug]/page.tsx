@@ -74,6 +74,13 @@ export default async function CaseStudyPage({
     )
   }
 
+  const playerLabels = {
+    play: settings?.playLabel ?? '',
+    pause: settings?.pauseLabel ?? '',
+    soundOn: settings?.soundOnLabel ?? '',
+    soundOff: settings?.soundOffLabel ?? '',
+  }
+
   return (
     <main className="pt-[calc(var(--header-height)+1rem)]">
       <article>
@@ -81,10 +88,15 @@ export default async function CaseStudyPage({
           study={study}
           liveSiteLabel={settings?.liveSiteLabel ?? ''}
           externalLinkLabel={settings?.externalLinkLabel ?? ''}
+          playerLabels={playerLabels}
         />
         <CaseStudySections
           sections={study.body}
-          labels={{ zoom: settings?.zoomImageLabel ?? '', close: settings?.closeLabel ?? '' }}
+          labels={{
+            zoom: settings?.zoomImageLabel ?? '',
+            close: settings?.closeLabel ?? '',
+            ...playerLabels,
+          }}
         />
       </article>
     </main>

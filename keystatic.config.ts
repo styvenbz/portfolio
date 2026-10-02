@@ -560,6 +560,24 @@ export default config({
           label: 'Close button label',
           description: 'The button that closes a full-screen image on case studies, e.g. "Close".',
         }),
+        playLabel: fields.text({
+          label: 'Play button label',
+          description:
+            'Read out by screen readers for the play button on case-study videos, e.g. "Play video".',
+        }),
+        pauseLabel: fields.text({
+          label: 'Pause button label',
+          description: 'The same button while the video is playing, e.g. "Pause video".',
+        }),
+        soundOnLabel: fields.text({
+          label: 'Sound on button label',
+          description:
+            'Read out by screen readers for the speaker button on case-study videos that have "Muted" unticked, e.g. "Turn sound on".',
+        }),
+        soundOffLabel: fields.text({
+          label: 'Sound off button label',
+          description: 'The same button once the sound is playing, e.g. "Turn sound off".',
+        }),
         notFoundHeading: fields.text({
           label: 'Not found — heading',
           description: 'Shown on the 404 page when a URL does not exist.',

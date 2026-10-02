@@ -1,0 +1,250 @@
+title: Resonate
+client: Huge · Internal AI Challenge
+year: '2026'
+summary: An AI-built app that connects people through the music they love.
+subtitle: An AI-built app that connects people through the music they love
+intro: >-
+  Huge launched an internal initiative to explore how far its people could go
+  with AI: design and build a product from scratch using AI as the main creative
+  and production partner. Around 40 participants from offices around the world
+  took part, across every level of seniority and discipline. The winners would
+  get a trip to Config 2026, Figma’s annual conference in San Francisco.
+keyPoints:
+  - label: Recognition
+    body: >-
+      Selected as one of the winners among around 40 participants worldwide,
+      earning a trip to Config 2026 in San Francisco.
+  - label: Deliverables
+    body: >-
+      A complete brand identity, an interactive app prototype and motion assets
+      for social media, all created with AI from scratch.
+tags:
+  - AI-assisted design
+  - Branding
+  - Art direction
+  - UX/UI design
+  - Prototyping
+  - Motion
+  - ChatGPT
+  - Nano Banana
+  - Grok
+  - Figma Make
+facts:
+  - label: Agency
+    value: Huge
+  - label: Context
+    value: Internal AI Challenge
+  - label: Year
+    value: '2026'
+featured: true
+order: 6
+thumbnail:
+  src: /images/case-studies/resonate/thumbnail/src.jpg
+  alt: >-
+    Five Resonate app screens: log in, “Sync your DNA”, “Break the Ice”, an
+    event ticket for The Echo Lounge and a map of nearby listeners.
+  width: 1935
+  height: 1088
+thumbnailVideo:
+  poster: /images/case-studies/resonate/thumbnailVideo/poster.jpg
+  autoplay: true
+  loop: true
+  muted: true
+  controls: false
+status: AI Challenge winner
+heroMedia:
+  discriminant: image
+  value:
+    src: /images/case-studies/resonate/heroMedia/value/src.jpg
+    alt: >-
+      Five Resonate app screens: log in, “Sync your DNA”, “Break the Ice”, an
+      event ticket for The Echo Lounge and a map of nearby listeners.
+    width: 1935
+    height: 1088
+access: public
+body:
+  - discriminant: textMedia
+    value:
+      theme: light
+      title: The idea
+      titleMuted: music as a meeting point
+      body: >-
+        Resonate is an app that turns shared musical taste into real-life
+        connections. It reads your listening habits on streaming platforms,
+        finds the artists and bands you play most, and connects you with nearby
+        events and with people who share your taste. You can discover an event,
+        buy tickets in the app, and meet your people in person.
+      media:
+        discriminant: image
+        value:
+          src: /images/case-studies/resonate/body/0/value/media/value/src.jpg
+          alt: >-
+            A listener at the centre of purple rings, surrounded by artists,
+            nearby people and music icons, with the Resonate logo below.
+          width: 1935
+          height: 1088
+      width: contained
+  - discriminant: list
+    value:
+      theme: dark
+      title: Two sides
+      titleMuted: of the product
+      items:
+        - marker: B2C
+          heading: Listeners
+          body: Discover real events matched to their listening habits.
+        - marker: B2B
+          heading: Venues and businesses
+          body: >-
+            Use Resonate to create events, sell tickets and bring in new
+            audiences. Resonate earns a small percentage of every ticket sold.
+  - discriminant: list
+    value:
+      theme: light
+      title: The process
+      titleMuted: AI at every stage
+      body: I used AI at every stage, from concept to final assets.
+      items:
+        - heading: Concept and strategy
+          body: >-
+            ChatGPT to shape the idea, the business model and the brand
+            narrative.
+        - heading: Visual assets
+          body: >-
+            Nano Banana to generate and refine imagery for the brand and the
+            app.
+        - heading: Motion
+          body: Grok to create GIFs and animated graphics for social media.
+        - heading: Prototype
+          body: >-
+            Figma Make to turn the designs into a working, interactive
+            prototype.
+  - discriminant: imageGrid
+    value:
+      theme: dark
+      title: Brand and
+      titleMuted: art direction
+      body: >-
+        The name Resonate comes from a simple idea: when two things vibrate at
+        the same frequency, they amplify each other. Music works that way, and
+        so do people. The brand brings together two vibrations, the sound waves
+        of music and the energy of young people, and treats the moment they meet
+        as the heart of the experience.
+
+
+        Waves and resonance. This idea runs through the whole identity, not only
+        the name. It shows up in flowing shapes, rhythm and movement across the
+        visuals, echoing the way sound travels and the way people connect when
+        they share the same taste.
+
+
+        Fresh. Resonate speaks to a generation that discovers music constantly,
+        so the visual language had to feel current and light: clean layouts,
+        generous space and imagery that feels alive rather than corporate.
+
+
+        Young. The brand reflects the energy of going out, meeting new people,
+        and living music in real life. Bold compositions and dynamic motion give
+        it a playful, confident attitude.
+
+
+        Emotional. Music is personal, and the brand had to feel that way too.
+        Every visual decision aims to evoke the feeling of hearing a song you
+        love or finding someone who loves it too.
+
+
+        From references to an original system. I gathered visual references to
+        define the direction for onboarding, color and typography. Then I used
+        AI to explore, generate, and refine those ideas into an original brand
+        system, from imagery and screens to motion assets for social media.
+      columns: '2'
+      wideLast: false
+      images:
+        - src: /images/case-studies/resonate/body/3/value/images/0/src.jpg
+          alt: >-
+            Visual references for onboarding, colour and typography from other
+            apps and brands, laid out as a moodboard.
+          width: 1935
+          height: 1088
+        - src: /images/case-studies/resonate/body/3/value/images/1/src.jpg
+          alt: >-
+            The purple Resonate wordmark surrounded by moodboard references for
+            typography, fashion and music photography.
+          width: 1935
+          height: 1088
+        - src: /images/case-studies/resonate/body/3/value/images/2/src.jpg
+          alt: >-
+            Brand visual of a woman with pink earrings inside glowing green
+            rings, with the message “Alicia sent you a Ping!”.
+          width: 1935
+          height: 1088
+        - src: /images/case-studies/resonate/body/3/value/images/3/src.jpg
+          alt: >-
+            Brand visual of a woman wearing earphones inside a stacked arch
+            shape in soft green tones, above the Resonate logo.
+          width: 1935
+          height: 1088
+  - discriminant: textMedia
+    value:
+      theme: light
+      title: The prototype
+      titleMuted: built with Figma Make
+      media:
+        discriminant: image
+        value:
+          src: /images/case-studies/resonate/body/4/value/media/value/src.jpg
+          alt: >-
+            Twelve Resonate app screens covering onboarding, music sources,
+            profile detection, the map, events, profiles and chat.
+          width: 1935
+          height: 1088
+      width: full
+  - discriminant: list
+    value:
+      theme: dark
+      title: The result
+      items:
+        - heading: Built with AI from scratch
+          body: >-
+            A complete brand identity, an interactive app prototype and motion
+            assets for social media, all created with AI from scratch.
+        - heading: One of the winners
+          body: >-
+            Selected as one of the winners among around 40 participants
+            worldwide, earning a trip to Config 2026 in San Francisco.
+  - discriminant: mediaGrid
+    value:
+      theme: light
+      title: Motion
+      titleMuted: for social media
+      columns: '2'
+      items:
+        - discriminant: video
+          value:
+            autoplay: true
+            loop: true
+            muted: true
+            controls: false
+        - discriminant: video
+          value:
+            autoplay: true
+            loop: true
+            muted: true
+            controls: false
+  - discriminant: textMedia
+    value:
+      theme: light
+      title: Live Demo
+      body: >-
+        A working prototype built from scratch with AI. Explore how Resonate
+        reads your music taste and connects you with real events.
+      media:
+        discriminant: video
+        value:
+          src: /images/case-studies/resonate/body/7/value/media/value/src.mp4
+          autoplay: false
+          loop: false
+          muted: false
+          controls: false
+      width: contained
+ogImage: {}

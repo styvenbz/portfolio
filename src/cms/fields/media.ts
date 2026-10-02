@@ -85,7 +85,12 @@ export function contentVideo({
         defaultValue: true,
       }),
       loop: fields.checkbox({ label: 'Loop', defaultValue: true }),
-      muted: fields.checkbox({ label: 'Muted', defaultValue: true }),
+      muted: fields.checkbox({
+        label: 'Muted',
+        description:
+          'Untick to let visitors hear the sound. Browsers only autoplay silent video, so it still starts muted and shows a speaker button the visitor clicks to turn the sound on (with "Show controls" ticked, the player’s own volume control does that instead).',
+        defaultValue: true,
+      }),
       controls: fields.checkbox({ label: 'Show controls', defaultValue: false }),
       width: fields.integer({ label: 'Intrinsic width (px)' }),
       height: fields.integer({ label: 'Intrinsic height (px)' }),

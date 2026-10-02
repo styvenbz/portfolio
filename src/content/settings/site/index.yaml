@@ -45,6 +45,10 @@ protectedLabel: Protected
 liveSiteLabel: Visit site
 zoomImageLabel: Expand image
 closeLabel: Close
+playLabel: Play video
+pauseLabel: Pause video
+soundOnLabel: Turn sound on
+soundOffLabel: Turn sound off
 notFoundHeading: This page doesn't exist.
 notFoundBody: The link may be out of date, or the work may have been taken down.
 notFoundLinkLabel: Back to work

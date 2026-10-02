@@ -133,6 +133,30 @@ export const caseStudySections = fields.blocks(
       }),
     },
 
+    mediaGrid: {
+      label: 'Media grid',
+      itemLabel: sectionLabel('Media grid'),
+      schema: fields.object({
+        theme: theme(),
+        ...heading(),
+        columns: fields.select({
+          label: 'Columns',
+          options: [
+            { label: 'Two', value: '2' },
+            { label: 'Three', value: '3' },
+          ],
+          defaultValue: '2',
+        }),
+        items: fields.array(contentMedia({ area: 'case-studies', label: 'Image or video' }), {
+          label: 'Images or videos',
+          description:
+            'Side by side, each at its own shape — no cropping, so vertical social clips work too. Videos play muted and looping by default. Empty slots are hidden, and so is the whole section until something is uploaded.',
+          itemLabel: (props) =>
+            props.discriminant === 'video' ? 'Video' : props.discriminant === 'image' ? 'Image' : 'Empty',
+        }),
+      }),
+    },
+
     beforeAfter: {
       label: 'Before / after',
       itemLabel: sectionLabel('Before / after'),

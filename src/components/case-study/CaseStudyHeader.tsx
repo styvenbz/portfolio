@@ -1,5 +1,6 @@
 import { ContentImage } from '@/components/media/ContentImage'
 import { ContentVideo } from '@/components/media/ContentVideo'
+import type { PlayerLabels } from '@/components/media/VideoPlayer'
 import { hasImage, hasVideo } from '@/lib/media'
 import type { CaseStudy } from '@/lib/content'
 import { Container } from './Container'
@@ -14,10 +15,12 @@ export function CaseStudyHeader({
   study,
   liveSiteLabel,
   externalLinkLabel,
+  playerLabels,
 }: {
   study: CaseStudy
   liveSiteLabel: string
   externalLinkLabel: string
+  playerLabels: PlayerLabels
 }) {
   const cover = study.heroMedia
   const hasIntro = Boolean(study.intro || study.keyPoints.length)
@@ -37,7 +40,7 @@ export function CaseStudyHeader({
                 />
               ) : null}
               {cover.discriminant === 'video' && hasVideo(cover.value) ? (
-                <ContentVideo value={cover.value} className="size-full object-cover" />
+                <ContentVideo value={cover.value} className="size-full object-cover" player={playerLabels} />
               ) : null}
             </div>
           </div>

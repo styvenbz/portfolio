@@ -1,4 +1,5 @@
 import { ContentVideo } from '@/components/media/ContentVideo'
+import type { PlayerLabels } from '@/components/media/VideoPlayer'
 import { ZoomableImage } from '@/components/media/ZoomableImage'
 import { hasVideo, type ImageValue, type VideoValue } from '@/lib/media'
 
@@ -17,7 +18,7 @@ export function SectionMedia({
 }: {
   media: Media
   sizes: string
-  labels: { zoom: string; close: string }
+  labels: { zoom: string; close: string } & PlayerLabels
   aspect?: string
   emptyClassName?: string
 }) {
@@ -29,7 +30,11 @@ export function SectionMedia({
     }
     return (
       <figure>
-        <ContentVideo value={media.value} className="h-auto w-full" />
+        <ContentVideo
+          value={media.value}
+          className="h-auto w-full"
+          player={labels}
+        />
         {media.value.caption ? (
           <figcaption className="text-case-body text-(--color-ink-muted) mt-3">
             {media.value.caption}

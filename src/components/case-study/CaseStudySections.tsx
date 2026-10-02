@@ -1,14 +1,15 @@
 import { ContentImage } from '@/components/media/ContentImage'
 import { ZoomableImage } from '@/components/media/ZoomableImage'
+import type { PlayerLabels } from '@/components/media/VideoPlayer'
 import { Reveal } from '@/components/motion/Reveal'
-import { hasImage } from '@/lib/media'
+import { hasImage, hasVideo } from '@/lib/media'
 import type { CaseStudy } from '@/lib/content'
 import { Container } from './Container'
 import { SectionHeading, hasHeading } from './SectionHeading'
 import { SectionMedia } from './SectionMedia'
 
 type Section = CaseStudy['body'][number]
-type Labels = { zoom: string; close: string }
+type Labels = { zoom: string; close: string } & PlayerLabels
 
 const CONTAINED_SIZES = '(max-width: 1100px) 100vw, 1068px'
 /* Space between a section heading and the media under it. */
@@ -29,7 +30,7 @@ export function CaseStudySections({
 }) {
   return (
     <>
-      {sections.map((section, index) => {
+      {sections.filter(hasContent).map((section, index) => {
         // A showcase with no heading is pure backdrop, so it runs flush.
         const flush = section.discriminant === 'showcase' && !hasHeading(section.value)
         const padding =
@@ -146,6 +147,30 @@ function SectionBody({ section, labels }: { section: Section; labels: Labels }) 
       )
     }
 
+    case 'mediaGrid': {
+      const { value } = section
+      const three = value.columns === '3'
+      return (
+        <Container>
+          <SectionHeading {...value} />
+          <div
+            className={`grid items-start gap-6 lg:gap-8 ${three ? 'sm:grid-cols-3' : 'sm:grid-cols-2'} ${
+              hasHeading(value) ? afterHeading : ''
+            }`}
+          >
+            {value.items.filter(isFilled).map((media, index) => (
+              <SectionMedia
+                key={index}
+                media={media}
+                sizes={three ? '(max-width: 640px) 100vw, 356px' : '(max-width: 640px) 100vw, 534px'}
+                labels={labels}
+              />
+            ))}
+          </div>
+        </Container>
+      )
+    }
+
     case 'beforeAfter': {
       const { value } = section
       return (
@@ -244,4 +269,18 @@ function Comparison({
       {caption ? <p className="text-case-body text-(--color-ink-muted) mt-1">{caption}</p> : null}
     </div>
   )
+}
+
+type MediaSlot = Extract<Section, { discriminant: 'mediaGrid' }>['value']['items'][number]
+
+/** A media slot with an uploaded file in it. */
+function isFilled(media: MediaSlot) {
+  if (media.discriminant === 'video') return hasVideo(media.value)
+  if (media.discriminant === 'image') return hasImage(media.value)
+  return false
+}
+
+/** Media grids stay off the page until at least one slot has a file. */
+function hasContent(section: Section) {
+  return section.discriminant !== 'mediaGrid' || section.value.items.some(isFilled)
 }
